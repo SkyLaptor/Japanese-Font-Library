@@ -1,10 +1,64 @@
 # Japanese Font Library
+![Skyrim TestedVersion](https://img.shields.io/badge/Skyrim-1.9.32.0-blue) ![SkyrimSE TestedVersion](https://img.shields.io/badge/SkyrimSE-1.6.1170.0-blue)
 
-## インストール
+## 開発時に使用するツール/MOD
+### UniteTTC
+TTCをTTFに分解するために利用。
+http://yozvox.web.fc2.com/556E697465545443.html
 
+### FontForge
+フォントファイルそのものを編集するために利用。OTF→TTFに変換する用途でも使う。
+https://fontforge.org/
+
+### JPEXS Free Flash Decompiler - ffdec
+SWFファイルを操作するために利用。
+https://github.com/jindrapetrik/jpexs-decompiler
+
+### Mod Organizer 2 - MO2
+MODマネージャー。バニラ環境をなるべく汚さないようにする。
+https://github.com/ModOrganizer2/modorganizer
+
+### xTranslator
+MOD翻訳ツール。
+https://github.com/MGuffin/xTranslator
+https://www.nexusmods.com/starfield/mods/313
+
+### Skyrim Script Extender - SKSE
+MOD使っている人の大多数は導入しているであろうから、導入した状態で動作確認する。
+https://skse.silverlock.org/
+
+### Improved Japanese Translation
+Skyrim日本語化と検索すると真っ先にヒットするのがtktk氏のサイトであるため、翻訳状況を合わせるために使用する。
+Skyrim/SkyrimSE共に**英語版コンテンツを日本語に書き換える方式**で構築する。SkyrimSEのv1.6.629以降の日本語版は `fontconfig_ja.txt` が使われることを念頭に置いておくこと。
+Skyrim用: https://www.nexusmods.com/skyrim/mods/88025
+SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/13701
+https://tktk1.net/skyrim/mymod/improved-japanese-translation/
+
+### 非公式パッチ
+賛否両論あるが結構な数のMODの前提にもなっていることから、導入した状態で動作確認する。
+Skyrim用: https://www.nexusmods.com/skyrim/mods/71214
+SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/266
+
+### SkyUI
+結構な数のMODの前提になっているため、導入していない/導入している状態で動作確認する。
+Skyrim用: https://www.nexusmods.com/skyrim/mods/3863
+SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/12604
+
+### Alternate Start - Live Another Life
+ゲーム開始時の長いドナドナシーンをカットするために使用。
+Skyrim用: https://www.afkmods.com/index.php?/files/file/270-alternate-start-live-another-life/
+SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/272
+
+### イントロスキップ
+最初のベセスダロゴをスキップする。`skyrim.ini` に以下を追記する。
+
+```:skyrim.ini
+[General]
+sIntroSequence=1
+```
 
 ## 旧バージョンのゲームデータを入手する方法
-Steamクライアントをインストールした状態で、ターミナルで `start steam://open/console` を実行する。
+Steamクライアントをインストールした状態で、steam://open/console にアクセスする。
 実行するとSteamがコンソールモードで起動するので、以下のコマンドを実行する。
 
 ```:steamconsole
@@ -24,7 +78,7 @@ SkyrimSE: https://steamdb.info/app/489830/depots/
 ★: フォントに関するコンテンツを含んでいる。
 
 ### Skyrim
-#### v1.9.31.0 (2013.3.1 - 2014.6.16)
+#### v1.9.31.0 (2013.3.1)
 日本語版の最終バージョン
 ```:steamconsole
 ★ The Elder Scrolls V: Skyrim Japanese (1 May 2013 – 08:20:28 UTC)
@@ -43,7 +97,7 @@ download_depot 72850 220765 257722701370938794
 download_depot 72850 226888 921222014325323019
 ```
 
-#### v1.9.32.0 (2013.3.19 - 2024.9.5)
+#### v1.9.32.0 (2013.3.19)
 英語版の最終バージョン
 
 ```:steamconsole
