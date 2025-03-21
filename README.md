@@ -3,11 +3,11 @@
 
 ## 開発時に使用するツール/MOD
 ### UniteTTC
-TTCをTTFに分解するために利用。
+TTCをTTFに分解するために利用。  
 http://yozvox.web.fc2.com/556E697465545443.html
 
 ### FontForge
-フォントファイルそのものを編集するために利用。OTF→TTFに変換する用途でも使う。
+フォントファイルそのものを編集するために利用。OTF→TTFに変換する用途でも使う。  
 https://fontforge.org/
 
 ### JPEXS Free Flash Decompiler - ffdec
@@ -15,38 +15,38 @@ SWFファイルを操作するために利用。
 https://github.com/jindrapetrik/jpexs-decompiler
 
 ### Mod Organizer 2 - MO2
-MODマネージャー。バニラ環境をなるべく汚さないようにする。
+MODマネージャー。バニラ環境をなるべく汚さないようにする。  
 https://github.com/ModOrganizer2/modorganizer
 
 ### xTranslator
-MOD翻訳ツール。
-https://github.com/MGuffin/xTranslator
+MOD翻訳ツール。  
+https://github.com/MGuffin/xTranslator  
 https://www.nexusmods.com/starfield/mods/313
 
 ### Skyrim Script Extender - SKSE
-MOD使っている人の大多数は導入しているであろうから、導入した状態で動作確認する。
+MOD使っている人の大多数は導入しているであろうから、導入した状態で動作確認する。  
 https://skse.silverlock.org/
 
 ### Improved Japanese Translation
 Skyrim日本語化と検索すると真っ先にヒットするのがtktk氏のサイトであるため、翻訳状況を合わせるために使用する。
-Skyrim/SkyrimSE共に**英語版コンテンツを日本語に書き換える方式**で構築する。SkyrimSEのv1.6.629以降の日本語版は `fontconfig_ja.txt` が使われることを念頭に置いておくこと。
-Skyrim用: https://www.nexusmods.com/skyrim/mods/88025
-SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/13701
-https://tktk1.net/skyrim/mymod/improved-japanese-translation/
+Skyrim/SkyrimSE共に**英語版コンテンツを日本語に書き換える方式**で構築する。SkyrimSEのv1.6.629以降の日本語版は `fontconfig_ja.txt` が使われることを念頭に置いておくこと。  
+Skyrim用: https://www.nexusmods.com/skyrim/mods/88025  
+SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/13701  
+参照: [日本語訳改善mod Improved Japanese Translation｜skyrimshot](https://tktk1.net/skyrim/mymod/improved-japanese-translation/)
 
 ### 非公式パッチ
-賛否両論あるが結構な数のMODの前提にもなっていることから、導入した状態で動作確認する。
-Skyrim用: https://www.nexusmods.com/skyrim/mods/71214
+賛否両論あるが結構な数のMODの前提にもなっていることから、導入した状態で動作確認する。  
+Skyrim用: https://www.nexusmods.com/skyrim/mods/71214  
 SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/266
 
 ### SkyUI
-結構な数のMODの前提になっているため、導入していない/導入している状態で動作確認する。
-Skyrim用: https://www.nexusmods.com/skyrim/mods/3863
+結構な数のMODの前提になっているため、導入していない/導入している状態で動作確認する。  
+Skyrim用: https://www.nexusmods.com/skyrim/mods/3863  
 SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/12604
 
 ### Alternate Start - Live Another Life
-ゲーム開始時の長いドナドナシーンをカットするために使用。
-Skyrim用: https://www.afkmods.com/index.php?/files/file/270-alternate-start-live-another-life/
+ゲーム開始時の長いドナドナシーンをカットするために使用。  
+Skyrim用: https://www.afkmods.com/index.php?/files/file/270-alternate-start-live-another-life/  
 SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/272
 
 ### イントロスキップ
@@ -58,28 +58,28 @@ sIntroSequence=1
 ```
 
 ## 旧バージョンのゲームデータを入手する方法
-Steamクライアントをインストールした状態で、steam://open/console にアクセスする。
-実行するとSteamがコンソールモードで起動するので、以下のコマンドを実行する。
+Steamクライアントをインストールした状態で、steam://open/console にアクセスする。  
+Steamがコンソールモードで起動するので、以下のコマンドを実行する。
 
 ```:steamconsole
 download_depot {AppID} {DepotID} {ManifestID}
 ```
 
-`DepotID` や `ManifestID` は [SteamDB](https://steamdb.info/) から入手可能。
-
+`DepotID` や `ManifestID` は [SteamDB](https://steamdb.info/) から入手可能。  
 Skyrim(LE): https://steamdb.info/app/72850/depots/  
 SkyrimSE: https://steamdb.info/app/489830/depots/
 
-実行すると、`C:\Program Files (x86)\Steam\steamapps\content` の中に `app_{AppID}\depot_{DepotID}` というディレクトリが作成されて、その中にデータがダウンロードされる。
+実行すると、`C:\Program Files (x86)\Steam\steamapps\content` の中に `app_{AppID}\depot_{DepotID}` というディレクトリが作成されて、その中にデータがダウンロードされる。  
 
 以下、大きく変更があったバージョンごとの入手コマンド。  
 
-●: フォントに関するコンテンツを含んでいない。
+●: フォントに関するコンテンツを含んでいない。  
 ★: フォントに関するコンテンツを含んでいる。
 
 ### Skyrim
 #### v1.9.31.0 (2013.3.1)
 日本語版の最終バージョン
+
 ```:steamconsole
 ★ The Elder Scrolls V: Skyrim Japanese (1 May 2013 – 08:20:28 UTC)
 download_depot 72850 72861 400878757036949667
@@ -136,7 +136,8 @@ download_depot 489830 544861 3124924854513767273
 ```
 
 #### v1.5.97.0 (2019.11.20)
-英語版1.5系の最新バージョン
+英語版1.5系の最終バージョン
+
 ```:steamconsole
 ● Skyrim Special Edition exe (20 November 2019 – 21:45:02 UTC)
 download_depot 489830 489833 2289561010626853674
@@ -146,11 +147,10 @@ download_depot 489830 489832 8702665189575304780
 ```
 
 #### v1.6.317.0 (2021.11.11)
-このバージョンを境にSE/AE/VRのコア部分が統合された模様。  
-日本語版は未リリースのため省略。
+このバージョンを境にSE/AE/VRのコア部分が統合された模様。日本語版は未リリースのため省略。
 
 #### v1.6.629.0 (2022.9.15)
-日本語版1.6系の初期バージョン。  
+日本語版1.6系の初期バージョン  
 ここからコアに日本語版も統合され、日本語デポには音声コンテンツのみ収録されるようになっている。  
 フォント定義はこれまでの `Interface/fontconfig.txt` 固定ではなく、`Skyrim_Default.ini` 中の `sFontConfigFile` で指定するように変更された模様。日本語版の場合 `Interface\FontConfig_ja.txt` がデフォルトで指定される。
 
@@ -166,7 +166,7 @@ download_depot 489830 544861 3494476046078906882
 ```
 
 #### v1.6.1170.0 (2024.1.17)
-現時点の最新版。
+2025.3.21時点の最新版
 
 ```:steamconsole
 ● Skyrim Special Edition exe (17 January 2024 – 16:01:14 UTC)
