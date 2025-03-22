@@ -1,4 +1,4 @@
-poetry.lock
 *.tmp
+*.swf
 local/
 release/
