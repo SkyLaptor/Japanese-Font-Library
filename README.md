@@ -1,7 +1,10 @@
 # Japanese Font Library
 ![Skyrim TestedVersion](https://img.shields.io/badge/Skyrim-1.9.32.0-blue) ![SkyrimSE TestedVersion](https://img.shields.io/badge/SkyrimSE-1.6.1170.0-blue)
 
-## 開発時に使用するツール/MOD
+日本語圏プレイヤー向けのフォント置換MOD  
+詳細はNexusModを参照。https://www.nexusmods.com/skyrimspecialedition/mods/12589
+
+## 開発時に使用するツール
 ### UniteTTC
 TTCをTTFに分解するために利用。  
 http://yozvox.web.fc2.com/556E697465545443.html
@@ -14,48 +17,10 @@ https://fontforge.org/
 SWFファイルを操作するために利用。
 https://github.com/jindrapetrik/jpexs-decompiler
 
-### Mod Organizer 2 - MO2
+### Vortex
 MODマネージャー。バニラ環境をなるべく汚さないようにする。  
-https://github.com/ModOrganizer2/modorganizer
+https://www.nexusmods.com/about/vortex
 
-### xTranslator
-MOD翻訳ツール。  
-https://github.com/MGuffin/xTranslator  
-https://www.nexusmods.com/starfield/mods/313
-
-### Skyrim Script Extender - SKSE
-MOD使っている人の大多数は導入しているであろうから、導入した状態で動作確認する。  
-https://skse.silverlock.org/
-
-### Improved Japanese Translation
-Skyrim日本語化と検索すると真っ先にヒットするのがtktk氏のサイトであるため、翻訳状況を合わせるために使用する。
-Skyrim/SkyrimSE共に**英語版コンテンツを日本語に書き換える方式**で構築する。SkyrimSEのv1.6.629以降の日本語版は `fontconfig_ja.txt` が使われることを念頭に置いておくこと。  
-Skyrim用: https://www.nexusmods.com/skyrim/mods/88025  
-SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/13701  
-参照: [日本語訳改善mod Improved Japanese Translation｜skyrimshot](https://tktk1.net/skyrim/mymod/improved-japanese-translation/)
-
-### 非公式パッチ
-賛否両論あるが結構な数のMODの前提にもなっていることから、導入した状態で動作確認する。  
-Skyrim用: https://www.nexusmods.com/skyrim/mods/71214  
-SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/266
-
-### SkyUI
-結構な数のMODの前提になっているため、導入していない/導入している状態で動作確認する。  
-Skyrim用: https://www.nexusmods.com/skyrim/mods/3863  
-SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/12604
-
-### Alternate Start - Live Another Life
-ゲーム開始時の長いドナドナシーンをカットするために使用。  
-Skyrim用: https://www.afkmods.com/index.php?/files/file/270-alternate-start-live-another-life/  
-SkyrimSE用: https://www.nexusmods.com/skyrimspecialedition/mods/272
-
-### イントロスキップ
-最初のベセスダロゴをスキップする。`skyrim.ini` に以下を追記する。
-
-```:skyrim.ini
-[General]
-sIntroSequence=1
-```
 
 ## 旧バージョンのゲームデータを入手する方法
 Steamクライアントをインストールした状態で、steam://open/console にアクセスする。  
@@ -124,19 +89,8 @@ download_depot 72850 72853 5477471785942614203
 ```
 
 ### SkyrimSE
-#### v1.5.73.0 (2019.3.13)
-日本語版1.5系の最終バージョン
-
-```:steamconsole
-● Skyrim Special Edition exe (13 March 2019 – 14:57:00 UTC)
-download_depot 489830 489833 6411417958676685207
-
-★Skyrim Special Edition japanese (13 March 2019 – 14:57:00 UTC)
-download_depot 489830 544861 3124924854513767273
-```
-
-#### v1.5.97.0 (2019.11.20)
-英語版1.5系の最終バージョン
+#### v1.5.97.0 (～2019.11.20)
+1.5系の最終バージョン
 
 ```:steamconsole
 ● Skyrim Special Edition exe (20 November 2019 – 21:45:02 UTC)
@@ -144,29 +98,21 @@ download_depot 489830 489833 2289561010626853674
 
 ★ Skyrim Special Edition core (20 November 2019 – 21:45:02 UTC)
 download_depot 489830 489832 8702665189575304780
+
+★Skyrim Special Edition japanese (13 March 2019 – 14:57:00 UTC)
+download_depot 489830 544861 3124924854513767273
 ```
 
-#### v1.6.317.0 (2021.11.11)
-このバージョンを境にSE/AE/VRのコア部分が統合された模様。日本語版は未リリースのため省略。
+#### v1.6.317.0 (2021.11.11～)
+このバージョンを境にSE/AE/VRのコア部分が統合された模様。
 
 #### v1.6.629.0 (2022.9.15)
 日本語版1.6系の初期バージョン  
 ここからコアに日本語版も統合され、日本語デポには音声コンテンツのみ収録されるようになっている。  
 フォント定義はこれまでの `Interface/fontconfig.txt` 固定ではなく、`Skyrim_Default.ini` 中の `sFontConfigFile` で指定するように変更された模様。日本語版の場合 `Interface\FontConfig_ja.txt` がデフォルトで指定される。
 
-```:steamconsole
-● Skyrim Special Edition exe (15 September 2022 – 10:25:14 UTC)
-download_depot 489830 489833 8453224879269405640
-
-★ Skyrim Special Edition core (15 September 2022 – 10:25:14 UTC)
-download_depot 489830 489832 2756691988703496654
-
-● Skyrim Special Edition japanese (15 September 2022 – 10:25:14 UTC)
-download_depot 489830 544861 3494476046078906882
-```
-
-#### v1.6.1170.0 (2024.1.17)
-2025.3.21時点の最新版
+#### v1.6.1170.0 (2024.1.17～現在)
+2025.4.1時点の最新版
 
 ```:steamconsole
 ● Skyrim Special Edition exe (17 January 2024 – 16:01:14 UTC)
@@ -237,9 +183,6 @@ download_depot 489830 544861 3494476046078906882
 | v1.6.629-1170.0(EN) | Interface/fonts_cclub.swf | Eurostile Cyr Std (Bold, exp:$CClub_Font_Bold), Eurostile LT Cyr Std (exp:$CClub_Font) |
 
 CreationClubが実装されたあたりから、フォントに対し `ExportAssets` タグが付き始めた。  
-`fonts_ja.swf` 及び `fonts_en.swf` を読み込みつつ、CreationClub周りのフォントマップは変更しないほうがいいかも。  
-コンソールフォントについては表示できない文字があると困ると思うので、 `ExportAssets` をちゃんとつけた専用フォントを用意すべきか。  
-`fonts_buttons.swf` と `fonts_cclub.swf` はそれぞれ `fonts_ja.swf` と `fonts_en.swf` を上書きしているように見受けられるが、何かしら理由があるかもしれないので削らずに読み込んだほうが良いかもしれない。  
 
 | フォントマップ名  | v1.5.73.0(JP) | v1.5.97.0(EN) | v1.6.629-1170.0(JP) | v1.6.629-1170.0(EN) |
 | - | - | - | - | - |
@@ -265,3 +208,22 @@ CreationClubが実装されたあたりから、フォントに対し `ExportAss
 | ControllerButtons | - | Controller  Buttons | Controller  Buttons | Controller  Buttons |
 | ControllerButtonsInverted | - | Controller  Buttons inverted | Controller  Buttons inverted | Controller  Buttons inverted |
 | Times New Roman | - | - | 1_Skyrim_JP_EveryFont_0805 | - |
+
+フォントマップは使用していないものがあっても、原理的には動作に影響ないはず。つまり、全部のフォントマップを網羅していればSkyrim/SkyrimSE/英語版/日本語版を気にせず利用できるマスターコンフィグが作れる。
+
+## バニラバグフィックスパッチの作り方
+### 本UIの内蔵フォント除去
+SE版はv1.6.629以降解消しているが、下位バージョンを使用している場合向けにパッチする必要あり。  
+英語版の最新の本UI `interface/book.swf` にはなぜかフォントファイルそのものが格納されており、そちらが優先されてしまう。  
+[FFDec](https://github.com/jindrapetrik/jpexs-decompiler)を使用して余分なフォントを除去する。
+動作確認としては、「エリトリスのノート」や「アーヴェルの日記」を開いてみると良い。  
+参考: https://obachanskyrim.blogspot.com/2012/07/bookswf.html
+
+### レベルアップメニューUI
+SE版はv1.6.629以降解消しているが、下位バージョンを使用している場合向けにパッチする必要あり。  
+日本語版のレベルアップメニューUI `interface/levelupmenu.swf` のフォントマップが正しく指定されておらず、きちんと表示されない。英語版ではバグがないため、英語版の `interface/levelupmenu.swf` を取り出して使用する。  
+ただ、デフォルトUIはバグは解消されていても表示が非常に大きく見切れているため、そこも修正する。yminを増やして文字の位置を変えた上で、HTMLレンダリングに変えてフォントサイズを指定する。
+
+## SkyUI向けMCM専用フォントマップ適用パッチの作り方
+コンフィグメニュー(MCM)はデフォルトで `$EverywhereFont` 系の汎用フォントを使用するが、日本語のような全角フォントだとUIをぶち抜いてしまう。かと言って `$EverywhereFont` 系にコンデンスドなフォント(幅を狭くしたもの)を指定すると他のUIが見づらくなる。その解決策として、MCMには専用のフォントマップを使用するようにする。
+MCMを実現しているUIは LE/SE共に`Interface/skyui/configpanel.swf` 。[FFDec](https://github.com/jindrapetrik/jpexs-decompiler)を使用してフォントマップを指定している箇所を書き換える。
