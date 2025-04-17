@@ -1,51 +1,43 @@
 # Japanese Font Library
 ![Skyrim TestedVersion](https://img.shields.io/badge/Skyrim-1.9.32.0-blue) ![SkyrimSE TestedVersion](https://img.shields.io/badge/SkyrimSE-1.6.1170.0-blue)
 
-日本語圏プレイヤー向けのフォント置換MOD  
-詳細はNexusModを参照。https://www.nexusmods.com/skyrimspecialedition/mods/12589
+日本語圏プレイヤー向けのフォント置換MOD
 
 ## 開発時に使用するツール
-### UniteTTC
-TTCをTTFに分解するために利用。  
-http://yozvox.web.fc2.com/556E697465545443.html
-
-### FontForge
-フォントファイルそのものを編集するために利用。OTF→TTFに変換する用途でも使う。  
-https://fontforge.org/
-
-### JPEXS Free Flash Decompiler - ffdec
-SWFファイルを操作するために利用。
-https://github.com/jindrapetrik/jpexs-decompiler
-
 ### Vortex
 MODマネージャー。バニラ環境をなるべく汚さないようにする。  
 https://www.nexusmods.com/about/vortex
 
+### XMLEDITOR.NET
+fomodインストーラー作成時のXMLエディタとして利用。
+http://www.xmleditor.jp/
+
 
 ## 旧バージョンのゲームデータを入手する方法
-Steamクライアントをインストールした状態で、steam://open/console にアクセスする。  
+Steamクライアントをインストールした状態で、steam://open/console にアクセスする。
 Steamがコンソールモードで起動するので、以下のコマンドを実行する。
 
-```:steamconsole
+```
 download_depot {AppID} {DepotID} {ManifestID}
 ```
 
-`DepotID` や `ManifestID` は [SteamDB](https://steamdb.info/) から入手可能。  
-Skyrim(LE): https://steamdb.info/app/72850/depots/  
-SkyrimSE: https://steamdb.info/app/489830/depots/
+`DepotID` や `ManifestID` は https://steamdb.info/ から入手可能。
+
+* Skyrim: https://steamdb.info/app/72850/depots/  
+* SkyrimSE: https://steamdb.info/app/489830/depots/
 
 実行すると、`C:\Program Files (x86)\Steam\steamapps\content` の中に `app_{AppID}\depot_{DepotID}` というディレクトリが作成されて、その中にデータがダウンロードされる。  
 
 以下、大きく変更があったバージョンごとの入手コマンド。  
 
-●: フォントに関するコンテンツを含んでいない。  
+●: フォントに関するコンテンツを含んでいない。
 ★: フォントに関するコンテンツを含んでいる。
 
 ### Skyrim
 #### v1.9.31.0 (2013.3.1)
 日本語版の最終バージョン
 
-```:steamconsole
+```
 ★ The Elder Scrolls V: Skyrim Japanese (1 May 2013 – 08:20:28 UTC)
 download_depot 72850 72861 400878757036949667
 
@@ -65,7 +57,7 @@ download_depot 72850 226888 921222014325323019
 #### v1.9.32.0 (2013.3.19)
 英語版の最終バージョン
 
-```:steamconsole
+```
 ● Skyrim exe (19 March 2013 – 18:40:17 UTC)
 download_depot 72850 72852 5176728229505148062
 
@@ -92,7 +84,7 @@ download_depot 72850 72853 5477471785942614203
 #### v1.5.97.0 (～2019.11.20)
 1.5系の最終バージョン
 
-```:steamconsole
+```
 ● Skyrim Special Edition exe (20 November 2019 – 21:45:02 UTC)
 download_depot 489830 489833 2289561010626853674
 
@@ -109,12 +101,12 @@ download_depot 489830 544861 3124924854513767273
 #### v1.6.629.0 (2022.9.15)
 日本語版1.6系の初期バージョン  
 ここからコアに日本語版も統合され、日本語デポには音声コンテンツのみ収録されるようになっている。  
-フォント定義はこれまでの `Interface/fontconfig.txt` 固定ではなく、`Skyrim_Default.ini` 中の `sFontConfigFile` で指定するように変更された模様。日本語版の場合 `Interface\FontConfig_ja.txt` がデフォルトで指定される。
+フォント定義はこれまでの `Interface/fontconfig.txt` 固定ではなく、`Skyrim_Default.ini` 中の `sFontConfigFile` で指定するように変更された模様。日本語版の場合 `Interface\FontConfig_ja.txt` がデフォルトとなっている。
 
 #### v1.6.1170.0 (2024.1.17～現在)
 2025.4.1時点の最新版
 
-```:steamconsole
+```
 ● Skyrim Special Edition exe (17 January 2024 – 16:01:14 UTC)
 download_depot 489830 489833 1914580699073641964
 
@@ -227,3 +219,6 @@ SE版はv1.6.629以降解消しているが、下位バージョンを使用し�
 ## SkyUI向けMCM専用フォントマップ適用パッチの作り方
 コンフィグメニュー(MCM)はデフォルトで `$EverywhereFont` 系の汎用フォントを使用するが、日本語のような全角フォントだとUIをぶち抜いてしまう。かと言って `$EverywhereFont` 系にコンデンスドなフォント(幅を狭くしたもの)を指定すると他のUIが見づらくなる。その解決策として、MCMには専用のフォントマップを使用するようにする。
 MCMを実現しているUIは LE/SE共に`Interface/skyui/configpanel.swf` 。[FFDec](https://github.com/jindrapetrik/jpexs-decompiler)を使用してフォントマップを指定している箇所を書き換える。
+
+## 参考
+Fomod Doc: https://fomod-docs.readthedocs.io/en/latest/index.html
