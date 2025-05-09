@@ -10,8 +10,8 @@
         <group name="ゲームエディション" type="SelectExactlyOne">
           <plugins order="Explicit">
             <plugin name="SkyrimSE">
-              <description>Skyrim SEに対して適用する場合はこちらを選択します。作者は所有していないため検証はできていませんが、Skyrim AE及びSkyrim VRでも動作するとのことです。
-当MODはSkyrimSE v1.6.1170にて検証されています。</description>
+              <description>Skyrim SEおよびAEに対して適用する場合はこちらを選択します。作者は所有していないため検証はできていませんが、Skyrim VRでも動作するとのことです。
+当MODはSkyrimAE v1.6.1170にて検証されています。</description>
               <image path="" />
               <files />
               <conditionFlags>
@@ -22,7 +22,7 @@
               </typeDescriptor>
             </plugin>
             <plugin name="Skyrim">
-              <description>Skyrim、Skyrim＋各種DLC、SkyrimLEに対して適用する場合はこちらを選択します。
+              <description>Skyrim、Skyrim＋各種DLC、SkyrimLEの所謂Oldrimに対して適用する場合はこちらを選択します。
 当MODはSkyrim v1.9.32にて検証されています。</description>
               <image path="" />
               <files />
@@ -38,7 +38,8 @@
         <group name="バグ修正" type="SelectAny">
           <plugins order="Explicit">
             <plugin name="本">
-              <description>「アーヴェルの日記」や「エルトリスのメモ」等、一部の書籍に意図したフォントが適用されないバグを修正します。</description>
+              <description>「アーヴェルの日記」や「エルトリスのメモ」等、一部の書籍に意図したフォントが適用されないバグを修正します。
+「Nordic UI」や「Edge UI」といったUIオーバーホール系を導入している場合はオーバーホールMOD側でバグは修正されていますし、当MODで上書きするとUIがバニラに戻ってしまうため、有効にしないで下さい。</description>
               <image path="" />
               <files />
               <conditionFlags>
@@ -50,7 +51,8 @@
             </plugin>
             <plugin name="レベルアップダイアログ">
               <description>レベルアップ時のスキルメニューに表示されるダイアログにて、文字が表示されないバグを修正します。
-また、文字を小さく表示して見切れないようにもします。</description>
+また、文字を小さく表示して見切れないようにもします。
+「Nordic UI」や「Edge UI」といったUIオーバーホール系を導入している場合はオーバーホールMOD側でバグは修正されていますし、当MODで上書きするとUIがバニラｎい戻ってしまうため、有効にしないで下さい。</description>
               <image path="" />
               <files />
               <conditionFlags>
@@ -126,6 +128,21 @@
                 <type name="Optional" />
               </typeDescriptor>
             </plugin>
+            <plugin name="モダン">
+              <description>EdgeUIなどのモダンなUI向けのフォントに置き換えます。
+
+・汎用フォント: MPLUS-Every
+・本フォント: バニライク-Book
+・メモフォント: バニライク-Handwrite</description>
+              <image path="fomod/preset_modern.jpg" />
+              <files />
+              <conditionFlags>
+                <flag name="Preset">Modern</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+            </plugin>
             <plugin name="不要">
               <description>プリセットを導入しません。自身でカスタマイズする場合はこちらを選択して下さい。（このインストーラーでカスタマイズできるわけではありません。）
 いきなり選択せず、慣れないうちは一度適当なプリセットを導入し、どのように構成すれば良いか雰囲気を掴んでから手を付けることをお勧めします。</description>
@@ -181,6 +198,7 @@
           <plugins order="Explicit">
             <plugin name="SkyUI用MCM専用フォントマップ">
               <description>強く非推奨です。MCM画面が狭くて日本語だと見切れて困っているという場合にはWider MCMを使用したほうが幸せになれます。
+「Nordic UI」や「Edge UI」といったUIオーバーホール系を導入している場合はMCM画面も全画面のものに置き換わっているはずですし、当MODで上書きするとUIがバニラに戻ってしまうため、有効にしないで下さい。
 
 SkyUI 5.2SE(SkyrimSE用)またはSkyUI 5.1(Skyrim用)のMCMメニューを、専用のフォントマップを使用するものに置換します。
 あくまで専用のフォントマップを使用するようにするだけであるため、fontconfig.txtに以下のフォントマップを追加した上で幅の狭いフォントを割り当てるという手間が発生します。（正しく割り当てなかった場合、MCM全体が豆腐化します。）
@@ -405,6 +423,48 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="fontconfig/cinecaption_skinny.txt" destination="interface/fontconfig.txt" />
           <file source="fontconfig/cinecaption_skinny.txt" destination="interface/fontconfig_ja.txt" />
           <file source="font/fonts_cinecaption_every_skinny.swf" destination="interface/fonts_cinecaption_every_skinny.swf" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Modern" />
+        </dependencies>
+        <files>
+          <file source="font/fonts_vanilike-book_book.swf" destination="interface/fonts_vanilike-book_book.swf" />
+          <file source="font/fonts_vanilike-handwrite_handwrite.swf" destination="interface/fonts_vanilike-handwrite_handwrite.swf" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Modern" />
+          <flagDependency flag="MainFontWidth" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/modern_normal.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/modern_normal.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_mplus_every.swf" destination="interface/fonts_mplus_every.swf" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Modern" />
+          <flagDependency flag="MainFontWidth" value="Condensed" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/modern_condensed.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/modern_condensed.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_mplus_every_condensed.swf" destination="interface/fonts_mplus_every_condensed.swf" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Modern" />
+          <flagDependency flag="MainFontWidth" value="Skinny" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/modern_skinny.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/modern_skinny.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_mplus_every_skinny.swf" destination="interface/fonts_mplus_every_skinny.swf" />
         </files>
       </pattern>
       <pattern>
