@@ -1,123 +1,56 @@
 # コントリビューションガイド
 開発するに当たっての留意事項、ナレッジなど。
 
-## 開発時に使用するツール
-### Vortex
-MODマネージャー
-https://www.nexusmods.com/about/vortex
+## はじめに（必ずお読みください）
+本プロジェクトへの貢献を検討いただきありがとうございます。 メンテナーの負担軽減とプロジェクトの品質維持のため、以下のルールを遵守してください。これらが守られていないプルリクエストは、内容を確認せずにクローズする場合があります。
 
-### ModOrganizer2
-MODマネージャー 
-https://www.nexusmods.com/about/vortex
+* Issue優先: 大きな変更や機能追加を行う前に、必ずIssueで提案し合意を得てください。
+* 最小PRs: 変更は可能な限り最小単位に分割してください。巨大な変更はレビュー対象外となります。
+* 品質管理: ローカルでのビルドおよびテスト通過は必須条件です。
 
-### XMLEDITOR.NET
-fomodインストーラー作成時のXMLエディタとして利用。
-http://www.xmleditor.jp/
+## 開発フロー
+本リポジトリでは GitLab-Flow を採用しています。
+
+1. mainブランチ: 全ての開発のベースです。
+2. 作業ブランチ: `main` からブランチ( `feature/issue-番号` 等）を切って作業してください。
+3. マージ: `main` へのマージは、レビュー承認およびCI通過後に行われます。
+4. プレリリース: 仮公開は、`main` から `pre-production` ブランチへのマージによって実行されます。
+5. リリース: 公開は、`pre-production` から `production` ブランチへのマージによって実行されます。
+
+## 大まかな開発手順
+
+1. リポジトリから `main` ブランチをクローン/チェックアウトする。
+2. 開発ツール類、テスト環境をセットアップする。
+3. コンテンツを修正し、テストを実行する。
+4. `main` ブランチに対して PR/MR を作成する。
+
+## テスト環境
+* 対象のゲーム: Skyrim, SkyrimSE(SkyrimAE), SkyrimVR
+* 対象のModマネージャー: [Vortex](https://www.nexusmods.com/about/vortex), [ModOrganizer2](https://www.nexusmods.com/about/vortex) ※公式そのままの状態でカスタムを加えていないものであること。
+* Mod: [SKSE](https://skse.silverlock.org/), [SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604) ※フォント周りに影響を及ぼす場合はIssueで提案して下さい。
 
 
-## 旧バージョンのゲームデータを入手する方法
-Steamクライアントをインストールした状態で、steam://open/console にアクセスする。
-Steamがコンソールモードで起動するので、以下のコマンドを実行する。
 
-```
-download_depot {AppID} {DepotID} {ManifestID}
-```
+## ゲームバージョン追跡情報
+### Skyrim v1.9.31.0 (2013.3.1)
+* 日本語版の最終バージョン。
 
-`DepotID` や `ManifestID` は https://steamdb.info/ から入手可能。
+### Skyrim v1.9.32.0 (2013.3.19)
+* 英語版の最終バージョン。
 
-* Skyrim: https://steamdb.info/app/72850/depots/  
-* SkyrimSE: https://steamdb.info/app/489830/depots/
+### SkyrimSE v1.5.97.0 (2019.11.20)
+* 1.5系の最終バージョン。一部に人気のためこのバージョンも考慮して開発。
 
-実行すると、`C:\Program Files (x86)\Steam\steamapps\content` の中に `app_{AppID}\depot_{DepotID}` というディレクトリが作成されて、その中にデータがダウンロードされる。  
+### SkyrimSE(AE,VR) v1.6.317.0 (2021.11.11)
+* このバージョンを境にSE/AE/VRのコア部分が統合された模様。
 
-以下、大きく変更があったバージョンごとの入手コマンド。  
+### SkyrimSE(AE,VR) v1.6.629.0 (2022.9.15)
+* 日本語版1.6系の初期リリース
+* コア部分は各言語共通化され日本語リソースも格納されている。日本語デポには音声コンテンツのみ収録されるようになっている。  
+* フォント定義はこれまでの `Interface/fontconfig.txt` 固定ではなく、`Skyrim_Default.ini` 中の `sFontConfigFile` で指定するように変更された模様。日本語版の場合 `Interface\FontConfig_ja.txt` がデフォルトとなっている。
 
-●: フォントに関するコンテンツを含んでいない。
-★: フォントに関するコンテンツを含んでいる。
-
-### Skyrim
-#### v1.9.31.0 (2013.3.1)
-日本語版の最終バージョン
-
-```
-★ The Elder Scrolls V: Skyrim Japanese (1 May 2013 – 08:20:28 UTC)
-download_depot 72850 72861 400878757036949667
-
-● Skyrim High Resolution Texture Pack (16 June 2014 – 08:08:16 UTC)
-download_depot 72850 202485 3360479978025462854
-
-● The Elder Scrolls V: Skyrim japanese Dawnguard (16 June 2014 – 08:08:17 UTC)
-download_depot 72850 211725 8299795016551985184
-
-● The Elder Scrolls V: Skyrim japanese Hearthfire (16 June 2014 – 08:08:19 UTC)
-download_depot 72850 220765 257722701370938794
-
-● The Elder Scrolls V: Skyrim Japanese Dragonborn (16 June 2014 – 08:08:21 UTC)
-download_depot 72850 226888 921222014325323019
-```
-
-#### v1.9.32.0 (2013.3.19)
-英語版の最終バージョン
-
-```
-● Skyrim exe (19 March 2013 – 18:40:17 UTC)
-download_depot 72850 72852 5176728229505148062
-
-● The Elder Scrolls V: Skyrim Dragonborn (16 June 2014 – 08:08:15 UTC)
-download_depot 72850 226880 7775806625498321311
-
-● The Elder Scrolls V: Skyrim Hearthfire (16 June 2014 – 08:08:15 UTC)
-download_depot 72850 220760 11352126252031938
-
-● The Elder Scrolls V: Skyrim Dawnguard DLC (16 June 2014 – 08:08:16 UTC)
-download_depot 72850 211720 8455218688827025070
-
-● Skyrim High Resolution Texture Pack (16 June 2014 – 08:08:16 UTC)
-download_depot 72850 202485 3360479978025462854
-
-★ Skyrim Content (12 March 2015 – 18:06:51 UTC)
-download_depot 72850 72851 430694959351693705
-
-● The Elder Scrolls V: Skyrim english (5 September 2024 – 15:02:03 UTC)
-download_depot 72850 72853 5477471785942614203
-```
-
-### SkyrimSE
-#### v1.5.97.0 (～2019.11.20)
-1.5系の最終バージョン
-
-```
-● Skyrim Special Edition exe (20 November 2019 – 21:45:02 UTC)
-download_depot 489830 489833 2289561010626853674
-
-★ Skyrim Special Edition core (20 November 2019 – 21:45:02 UTC)
-download_depot 489830 489832 8702665189575304780
-
-★Skyrim Special Edition japanese (13 March 2019 – 14:57:00 UTC)
-download_depot 489830 544861 3124924854513767273
-```
-
-#### v1.6.317.0 (2021.11.11～)
-このバージョンを境にSE/AE/VRのコア部分が統合された模様。
-
-#### v1.6.629.0 (2022.9.15)
-日本語版1.6系の初期バージョン  
-ここからコアに日本語版も統合され、日本語デポには音声コンテンツのみ収録されるようになっている。  
-フォント定義はこれまでの `Interface/fontconfig.txt` 固定ではなく、`Skyrim_Default.ini` 中の `sFontConfigFile` で指定するように変更された模様。日本語版の場合 `Interface\FontConfig_ja.txt` がデフォルトとなっている。
-
-#### v1.6.1170.0 (2024.1.17～現在)
-2025.4.1時点の最新版
-
-```
-● Skyrim Special Edition exe (17 January 2024 – 16:01:14 UTC)
-download_depot 489830 489833 1914580699073641964
-
-★ Skyrim Special Edition core (17 January 2024 – 16:01:14 UTC)
-download_depot 489830 489832 8042843504692938467
-
-●Skyrim Special Edition japanese (15 September 2022 – 10:25:14 UTC)
-download_depot 489830 544861 3494476046078906882
-```
+### SkyrimSE(AE,VR) v1.6.1170.0 (2024.1.17)
+2026.2.7時点の最新版
 
 
 ## ゲームバージョン毎のフォント定義
@@ -155,7 +88,6 @@ download_depot 489830 544861 3494476046078906882
 | $CreditsFont | Futura Condensed | - |
 
 
-
 ### SkyrimSE
 | ゲームバージョン  | フォント定義ファイル | 読み込みフォント |
 | - | - | - |
@@ -176,7 +108,8 @@ download_depot 489830 544861 3494476046078906882
 | v1.6.629-1170.0(EN) | Interface/fonts_en.swf | Controller  Buttons (exp:$ControllerButtons), Controller  Buttons inverted (exp:$ControllerButtonsInverted), Eurostile Cyr Std (Bold, exp:$CClub_Font_Bold), Eurostile LT Cyr Std (exp:$CClub_Font), Futura CondensedLight, Futura Condensed, Futura Condensed (Bold), Dragon_script, SkyrimBooks_Gaelic, SkyrimBooks_Handwritten_Bold, Daedric, Dwemer, Falmer, SkyrimSymbols, Mage Script, SkyrimBooks_Unreadable |
 | v1.6.629-1170.0(EN) | Interface/fonts_cclub.swf | Eurostile Cyr Std (Bold, exp:$CClub_Font_Bold), Eurostile LT Cyr Std (exp:$CClub_Font) |
 
-CreationClubが実装されたあたりから、フォントに対し `ExportAssets` タグが付き始めた。  
+CreationClubが実装されたあたりから、フォントに対し `ExportAssets` タグが付き始めました。
+調査したところ、フォントへの参照リンケージであり、格納フォント名と同じにした方が良い模様です。  
 
 | フォントマップ名  | v1.5.73.0(JP) | v1.5.97.0(EN) | v1.6.629-1170.0(JP) | v1.6.629-1170.0(EN) |
 | - | - | - | - | - |
@@ -203,24 +136,26 @@ CreationClubが実装されたあたりから、フォントに対し `ExportAss
 | ControllerButtonsInverted | - | Controller  Buttons inverted | Controller  Buttons inverted | Controller  Buttons inverted |
 | Times New Roman | - | - | 1_Skyrim_JP_EveryFont_0805 | - |
 
-フォントマップは使用していないものがあっても、原理的には動作に影響ないはず。つまり、全部のフォントマップを網羅していればSkyrim/SkyrimSE/英語版/日本語版を気にせず利用できるマスターコンフィグが作れる。
+フォントマップは使用していないものがあっても、原理的には動作に影響はないはずです。つまり、全部のフォントマップを網羅していればゲームバージョンやエディションを気にせず利用できるマスターコンフィグが作れるということになります。
 
-## バニラバグフィックスパッチの作り方
-### 本UIの内蔵フォント除去
-SE版はv1.6.629以降解消しているが、下位バージョンを使用している場合向けにパッチする必要あり。  
-英語版の最新の本UI `interface/book.swf` にはなぜかフォントファイルそのものが格納されており、そちらが優先されてしまう。  
-[FFDec](https://github.com/jindrapetrik/jpexs-decompiler)を使用して余分なフォントを除去する。
-動作確認としては、「エリトリスのノート」や「アーヴェルの日記」を開いてみると良い。  
-参考: https://obachanskyrim.blogspot.com/2012/07/bookswf.html
 
-### レベルアップメニューUI
-SE版はv1.6.629以降解消しているが、下位バージョンを使用している場合向けにパッチする必要あり。  
-日本語版のレベルアップメニューUI `interface/levelupmenu.swf` のフォントマップが正しく指定されておらず、きちんと表示されない。英語版ではバグがないため、英語版の `interface/levelupmenu.swf` を取り出して使用する。  
-ただ、デフォルトUIはバグは解消されていても表示が非常に大きく見切れているため、そこも修正する。yminを増やして文字の位置を変えた上で、HTMLレンダリングに変えてフォントサイズを指定する。
+## ゲーム設定
+テストをスムーズに行うための設定などのメモです。
 
-## SkyUI向けMCM専用フォントマップ適用パッチの作り方
-コンフィグメニュー(MCM)はデフォルトで `$EverywhereFont` 系の汎用フォントを使用するが、日本語のような全角フォントだとUIをぶち抜いてしまう。かと言って `$EverywhereFont` 系にコンデンスドなフォント(幅を狭くしたもの)を指定すると他のUIが見づらくなる。その解決策として、MCMには専用のフォントマップを使用するようにする。
-MCMを実現しているUIは LE/SE共に`Interface/skyui/configpanel.swf` 。[FFDec](https://github.com/jindrapetrik/jpexs-decompiler)を使用してフォントマップを指定している箇所を書き換える。
+### 最初のベセスダロゴを表示させない
+Skyrim.ini内に以下を追加。
 
-## 参考
-Fomod Doc: https://fomod-docs.readthedocs.io/en/latest/index.html
+```
+[General]
+sIntroSequence=
+```
+
+Skyrim.iniの場所はOSやMO2の設定で異なります。
+
+* 通常: `C:\Users\<username>\Documents\My Games\Skyrim Special Edition`
+* 通常(OneDrive): `C:\Users\<username>\OneDrive\Document\My Games\Skyrim Special Edition`
+* MO2: `<MO2 Skyrimインスタンスディレクトリ>\profiles\<プロファイル名>`
+
+## Fomodについて
+下記ドキュメントを参考にします。
+https://fomod-docs.readthedocs.io/en/latest/index.html
