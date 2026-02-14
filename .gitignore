@@ -1,3 +1,27 @@
-*.tmp
-local/
-release/
+# Python中間生成物
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.venv/
+
+# 成果物
+dist/
+build/
+
+# MEGASync
+.megaignore
+desktop.ini
+
+# フォントファイル
+*.ttf
+*.otf
+*.ttc
+*.otc
+
+# 圧縮ファイル
+*.zip
+*.lzh
+*.7z
+*.rar
