@@ -7,8 +7,8 @@ __pycache__/
 .venv/
 
 # 成果物
-#dist/
-#build/
+dist/
+build/
 
 # MEGASync
 .megaignore
