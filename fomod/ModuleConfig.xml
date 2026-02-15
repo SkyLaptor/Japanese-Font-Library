@@ -140,9 +140,9 @@
                 <type name="Optional" />
               </typeDescriptor>
             </plugin>
-            <plugin name="不要">
-              <description>プリセットを導入しません。自身でカスタマイズする場合はこちらを選択して下さい。（このインストーラーでカスタマイズできるわけではありません。）
-いきなり選択せず、慣れないうちは一度適当なプリセットを導入し、フォント設定ファイル(fontconfig.txt)を眺めて、どのように構成すれば良いか雰囲気を掴んでから手を付けることをお勧めします。</description>
+            <plugin name="フォントカスタムモード">
+              <description>プリセットを導入しません。自身でカスタマイズする場合はこちらを選択して下さい。
+カスタマイズ手順はGitHubを参照して下さい。https://github.com/SkyLaptor/Japanese-Font-Library</description>
               <image path="" />
               <files />
               <conditionFlags>
@@ -207,11 +207,9 @@
               </typeDescriptor>
             </plugin>
             <plugin name="軽量版">
-              <description>
-                <description>スカイリムにデフォルトで収録されている文字のみのサブセットフォントを使用します。
+              <description>スカイリムにデフォルトで収録されている文字のみのサブセットフォントを使用します。
 翻訳内容によっては文字が豆腐になります。TESVKanjiCheckerなどを使用して翻訳を確認して下さい。
 このフォントを入れたことでCTDが頻発する場合はこちらをお試し下さい。</description>
-              </description>
               <files />
               <conditionFlags>
                 <flag name="Subset">Lightweight</flag>
