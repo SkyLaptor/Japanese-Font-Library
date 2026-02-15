@@ -489,7 +489,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <flagDependency flag="Subset" value="Normal" />
         </dependencies>
         <files>
-          <file source="font/fonts_skyrim-book_book.swf" destination="interface/fonts_skyrim-book_book.swf" />
+          <file source="font/fonts_skyrim-jp-book_book.swf" destination="interface/fonts_skyrim-jp-book_book.swf" />
           <file source="font/fonts_skyrim-jp-handwrite_handwrite.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite.swf" />
         </files>
       </pattern>
@@ -719,7 +719,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <flagDependency flag="Subset" value="Lightweight" />
         </dependencies>
         <files>
-          <file source="font/fonts_skyrim-book_book_lightweight.swf" destination="interface/fonts_skyrim-book_book_lightweight.swf" />
+          <file source="font/fonts_skyrim-jp-book_book_lightweight.swf" destination="interface/fonts_skyrim-jp-book_book_lightweight.swf" />
           <file source="font/fonts_skyrim-jp-handwrite_handwrite_lightweight.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite_lightweight.swf" />
         </files>
       </pattern>
