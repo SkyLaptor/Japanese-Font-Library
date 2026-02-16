@@ -27,28 +27,26 @@
 * 対象のModマネージャー: [Vortex](https://www.nexusmods.com/about/vortex), [ModOrganizer2](https://www.nexusmods.com/about/vortex) ※公式そのままの状態でカスタムを加えていないものであること。
 * Mod: [SKSE](https://skse.silverlock.org/), [SkyUI](https://www.nexusmods.com/skyrimspecialedition/mods/12604) ※フォント周りに影響を及ぼす場合はIssueで提案して下さい。
 
-
-
 ## ゲームバージョン追跡情報
 ### Skyrim v1.9.31.0 (2013.3.1)
-* 日本語版の最終バージョン。
+* 日本語版の最終バージョンです。
 
 ### Skyrim v1.9.32.0 (2013.3.19)
-* 英語版の最終バージョン。
+* 英語版の最終バージョンです。
 
 ### SkyrimSE v1.5.97.0 (2019.11.20)
-* 1.5系の最終バージョン。一部に人気のためこのバージョンも考慮して開発。
+* 1.5系の最終バージョン。一部に人気のためこのバージョンも考慮して開発したほうが良いかもしれません。
 
 ### SkyrimSE(AE,VR) v1.6.317.0 (2021.11.11)
-* このバージョンを境にSE/AE/VRのコア部分が統合された模様。
+* このバージョンを境にSE/AE/VRのコア部分が統合された模様です。
 
 ### SkyrimSE(AE,VR) v1.6.629.0 (2022.9.15)
 * 日本語版1.6系の初期リリース
-* コア部分は各言語共通化され日本語リソースも格納されている。日本語デポには音声コンテンツのみ収録されるようになっている。  
-* フォント定義はこれまでの `Interface/fontconfig.txt` 固定ではなく、`Skyrim_Default.ini` 中の `sFontConfigFile` で指定するように変更された模様。日本語版の場合 `Interface\FontConfig_ja.txt` がデフォルトとなっている。
+* コア部分は各言語共通化され日本語リソースも格納されています。日本語デポには音声コンテンツのみ収録されるようになっていました。  
+* フォント定義はこれまでの `Interface/fontconfig.txt` 固定ではなく、`Skyrim_Default.ini` 中の `sFontConfigFile` で指定するように変更された模様です。日本語版の場合 `Interface\FontConfig_ja.txt` がデフォルトとなっています。
 
 ### SkyrimSE(AE,VR) v1.6.1170.0 (2024.1.17)
-2026.2.7時点の最新版
+2026.2.7時点の最新版です。
 
 
 ## ゲームバージョン毎のフォント定義
@@ -107,7 +105,7 @@
 | v1.6.629-1170.0(EN) | Interface/fonts_cclub.swf | Eurostile Cyr Std (Bold, exp:$CClub_Font_Bold), Eurostile LT Cyr Std (exp:$CClub_Font) |
 
 CreationClubが実装されたあたりから、フォントに対し `ExportAssets` タグが付き始めました。
-調査したところ、フォントへの参照リンケージであり、格納フォント名と同じにした方が良い模様です。  
+調査したところフォントへの参照リンケージであり、格納フォント名と同じにした方が良い模様ですが、スカイリムではそもそも使用されていないように見受けられます。
 
 | フォントマップ名  | v1.5.73.0(JP) | v1.5.97.0(EN) | v1.6.629-1170.0(JP) | v1.6.629-1170.0(EN) |
 | - | - | - | - | - |
@@ -155,5 +153,12 @@ Skyrim.iniの場所はOSやMO2の設定で異なります。
 * MO2: `<MO2 Skyrimインスタンスディレクトリ>\profiles\<プロファイル名>`
 
 ## Fomodについて
-下記ドキュメントを参考にします。
+下記ドキュメントを参考にしてインストーラーを構成します。
 https://fomod-docs.readthedocs.io/en/latest/index.html
+
+## Fomodインストーラーのビルド
+完成しリリースする際には、以下でビルドを行います。
+
+1. `build_installer.cmd` を開いて `VERSION` を修正します。
+2. `$ cmd /c .\build_installer.cmd` を実行します。
+3. `build` ディレクトリにインストーラー( `Japanese-Font-Library_{バージョン番号}.7z` )が出来上がるので、GitHub 及び NexusMods にリリースします。
