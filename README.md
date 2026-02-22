@@ -34,8 +34,8 @@
 ### 1. 準備
 インストーラーで **「フォントカスタムモード」** を選択して導入します。
 
-別途、好みのフォントSWFファイルを [Nexus Mods](https://www.nexusmods.com/skyrimspecialedition/mods/12589) の `Miscellaneous files` からダウンロードして配置してください。  
-自作したい場合は、サブプロジェクトの [Japanese Font Library - Fonts](https://github.com/SkyLaptor/Japanese-Font-Library-Fonts) でビルドツールを公開しています。
+別途、好みのフォントSWFファイルを [Nexus Mods](https://www.nexusmods.com/skyrimspecialedition/mods/12589) の `Miscellaneous files` からダウンロードして `Skyrim\Data\Interface` 内に配置してください。  
+フォントSWFファイルを自作したい場合は、サブプロジェクトの [Japanese Font Library - Fonts](https://github.com/SkyLaptor/Japanese-Font-Library-Fonts) で作成に便利なツールを公開しています。
 
 ### 2. fontconfig.txt の編集
 `Skyrim\Data\Interface` 内の設定ファイルを開き、以下の2箇所を編集します。
