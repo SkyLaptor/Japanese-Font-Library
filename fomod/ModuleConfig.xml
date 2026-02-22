@@ -2,6 +2,8 @@
   <moduleName>Japanese Font Library</moduleName>
   <requiredInstallFiles>
     <file source="font/fonts_core.swf" destination="interface/fonts_core.swf" />
+    <file source="fontconfig/fontconfig_ja_template.txt" destination="interface/fontconfig_template.txt" />
+    <file source="fontconfig/fontconfig_ja_template.txt" destination="interface/fontconfig_ja_template.txt" />
   </requiredInstallFiles>
   <installSteps order="Explicit">
     <installStep name="">
@@ -10,7 +12,7 @@
           <plugins order="Explicit">
             <plugin name="SkyrimSE">
               <description>Skyrim SE/AE/VR対して適用する場合はこちらを選択します。
-当MODはSkyrimAE v1.6.1170にて検証されています。</description>
+当MODはSkyrimAE 日本語版 v1.6.1170にて検証されています。</description>
               <image path="" />
               <files />
               <conditionFlags>
@@ -21,8 +23,8 @@
               </typeDescriptor>
             </plugin>
             <plugin name="Skyrim">
-              <description>Skyrim、Skyrim＋各種DLC、SkyrimLEの所謂Oldrimに対して適用する場合はこちらを選択します。
-当MODはSkyrim v1.9.32にて検証されています。</description>
+              <description>Skyrim 無印/LEに対して適用する場合はこちらを選択します。
+当MODはSkyrim 英語版 v1.9.32にて検証されています。</description>
               <image path="" />
               <files />
               <conditionFlags>
@@ -37,7 +39,8 @@
         <group name="バグ修正" type="SelectAny">
           <plugins order="Explicit">
             <plugin name="本">
-              <description>「アーヴェルの日記」や「エルトリスのメモ」等、一部の書籍に意図したフォントが適用されないバグを修正します。</description>
+              <description>「アーヴェルの日記」や「エルトリスのメモ」等、一部の書籍に意図したフォントが適用されないバグを修正します。
+他のUI系MODと競合が発生した場合は無効化して下さい。</description>
               <image path="" />
               <files />
               <conditionFlags>
@@ -48,8 +51,8 @@
               </typeDescriptor>
             </plugin>
             <plugin name="レベルアップダイアログ">
-              <description>レベルアップ時のスキルメニューに表示されるダイアログにて、文字が表示されないバグを修正します。
-また、文字を小さく表示して見切れないようにもします。</description>
+              <description>レベルアップ時のスキルメニューに表示されるダイアログにて、文字が表示されないバグ、文字が大きすぎる問題を修正します。
+他のUI系MODと競合が発生した場合は無効化して下さい。</description>
               <image path="" />
               <files />
               <conditionFlags>
@@ -95,12 +98,27 @@
                 <type name="Optional" />
               </typeDescriptor>
             </plugin>
+            <plugin name="スムーズスカイリム">
+              <description>日本語版Skyrimのデフォルトフォントのうち、メインフォントを視認性の良い似たフォントに置き換えます。
+
+・汎用フォント: FuturaCondensed + Noto-Sans
+・本フォント: スカイリムJP-Book
+・メモフォント: スカイリムJP-Handwrite</description>
+              <image path="fomod/preset_smoothskyrim.jpg" />
+              <files />
+              <conditionFlags>
+                <flag name="Preset">SmoothSkyrim</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+            </plugin>
             <plugin name="ロアフレンドリー">
               <description>Skyrim用MOD Lore-friendly fonts - font_jp_skyrim 移植拡張版です。
 
-・汎用フォント: Lore-Feidndly-Every
-・本フォント: Lore-Feidndly-Every
-・メモフォント: Lore-Feidndly-Handwrite</description>
+・汎用フォント: Lore-Friendly-Every
+・本フォント: Lore-Friendly-Every
+・メモフォント: Lore-Friendly-Handwrite</description>
               <image path="fomod/preset_lorefriendly.jpg" />
               <files />
               <conditionFlags>
@@ -141,12 +159,14 @@
               </typeDescriptor>
             </plugin>
             <plugin name="フォントカスタムモード">
-              <description>プリセットを導入しません。自身でカスタマイズする場合はこちらを選択して下さい。
-カスタマイズ手順はGitHubを参照して下さい。https://github.com/SkyLaptor/Japanese-Font-Library</description>
+              <description>フォントファイルは配置せず、カスタマイズ用のフォントコンフィグテンプレート(interface\fontconfig_template.txt)と必須ファイルのみ配置します。自身でカスタマイズする場合はこちらを選択して下さい。
+カスタマイズ手順はGitHubを参照して下さい。https://github.com/SkyLaptor/Japanese-Font-Library
+
+なお、以降のメインフォント幅、サブセット設定は本モードでは無効です。</description>
               <image path="" />
               <files />
               <conditionFlags>
-                <flag name="Preset">None</flag>
+                <flag name="Preset">Custom</flag>
               </conditionFlags>
               <typeDescriptor>
                 <type name="Optional" />
@@ -168,7 +188,7 @@
               </typeDescriptor>
             </plugin>
             <plugin name="コンデンスド">
-              <description>通常のフォント幅と比べて60-70%の幅となります。
+              <description>フォント幅が通常比60-70%になります。
 視認性とUIへの収まりのバランスが取れています。</description>
               <image path="fomod/sample_condensed.jpg" />
               <files />
@@ -180,8 +200,8 @@
               </typeDescriptor>
             </plugin>
             <plugin name="スキニー">
-              <description>通常のフォント幅と比べて40-50%の幅となります。
-視認性を犠牲にUIへの収まりを最重要視している人向けです。</description>
+              <description>フォント幅が通常比40-50%になります。
+視認性よりUIへの収まりを重要視する人向けです。</description>
               <image path="fomod/sample_skinny.jpg" />
               <files />
               <conditionFlags>
@@ -209,7 +229,7 @@
             <plugin name="軽量版">
               <description>スカイリムにデフォルトで収録されている文字のみのサブセットフォントを使用します。
 翻訳内容によっては文字が豆腐になります。TESVKanjiCheckerなどを使用して翻訳を確認して下さい。
-このフォントを入れたことでCTDが頻発する場合はこちらをお試し下さい。</description>
+通常版サブセットを使用してCTDが頻発するといった場合は、こちらの軽量版をお試し下さい。</description>
               <files />
               <conditionFlags>
                 <flag name="Subset">Lightweight</flag>
@@ -220,14 +240,12 @@
             </plugin>
           </plugins>
         </group>
-        <group name="オプション" type="SelectAny">
+        <group name="その他オプション" type="SelectAny">
           <plugins order="Explicit">
             <plugin name="SkyUI用MCM専用フォントマップ">
-              <description>強く非推奨です。MCM画面が狭くて日本語だと見切れて困っているという場合にはWider MCMを使用したほうが幸せになれます。
-「Nordic UI」や「Edge UI」といったUIオーバーホール系を導入している場合はMCM画面も全画面のものに置き換わっているはずですし、当MODで上書きするとUIがバニラに戻ってしまうため、有効にしないで下さい。
+              <description>SkyUIのMCM画面が使用するフォントマップを変更するパッチです。他のUI系MODと競合が発生した場合は無効化して下さい。
 
-SkyUI 5.2SE(SkyrimSE用)またはSkyUI 5.1(Skyrim用)のMCMメニューを、専用のフォントマップを使用するものに置換します。
-あくまで専用のフォントマップを使用するようにするだけであるため、fontconfig.txtに以下のフォントマップを追加した上で幅の狭いフォントを割り当てるという手間が発生します。（正しく割り当てなかった場合、MCM全体が豆腐化します。）
+使用するフォントマップを変更しますので、必ずfontconfig.txtに以下のフォントマップが適切に設定されていることを確認して下さい。
 map "$MCMFont" = "フォント名" Normal
 map "$MCMMediumFont" = "フォント名" Normal
 map "$MCMBoldFont" = "フォント名" Normal</description>
@@ -247,6 +265,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
   </installSteps>
   <conditionalFileInstalls>
     <patterns>
+      <!-- 本バグ修正 -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="GameVersion" value="SkyrimSE" />
@@ -265,6 +284,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="bugfix/skyrim-book.swf" destination="interface/book.swf" />
         </files>
       </pattern>
+      <!-- レベルアップメニューバグ修正 -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="GameVersion" value="SkyrimSE" />
@@ -283,6 +303,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="bugfix/skyrim-levelupmenu.swf" destination="interface/levelupmenu.swf" />
         </files>
       </pattern>
+      <!-- コンソールフォント（共通） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Subset" value="Normal" />
@@ -299,6 +320,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_hackgen-mono_bold_every_lightweight.swf" destination="interface/fonts_hackgen-mono_bold_every_lightweight.swf" />
         </files>
       </pattern>
+      <!-- カワイイプリセット（通常版・共通） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Kawaii" />
@@ -309,6 +331,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_apricot_handwrite.swf" destination="interface/fonts_apricot_handwrite.swf" />
         </files>
       </pattern>
+      <!-- カワイイプリセット（通常版・通常幅） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Kawaii" />
@@ -321,6 +344,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_nyashi-kai2_every.swf" destination="interface/fonts_nyashi-kai2_every.swf" />
         </files>
       </pattern>
+      <!-- カワイイプリセット（通常版・コンデンス） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Kawaii" />
@@ -333,6 +357,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_nyashi-kai2_every_condensed.swf" destination="interface/fonts_nyashi-kai2_every_condensed.swf" />
         </files>
       </pattern>
+      <!-- カワイイプリセット（通常版・スキニー） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Kawaii" />
@@ -345,190 +370,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_nyashi-kai2_every_skinny.swf" destination="interface/fonts_nyashi-kai2_every_skinny.swf" />
         </files>
       </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="Skyrim" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="font/fonts_skyrim-jp-book_book.swf" destination="interface/fonts_skyrim-jp-book_book.swf" />
-          <file source="font/fonts_skyrim-jp-handwrite_handwrite.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="Skyrim" />
-          <flagDependency flag="MainFontWidth" value="Normal" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="fontconfig/skyrim_normal.txt" destination="interface/fontconfig.txt" />
-          <file source="fontconfig/skyrim_normal.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="font/fonts_skyrim-jp-every_every.swf" destination="interface/fonts_skyrim-jp-every_every.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="Skyrim" />
-          <flagDependency flag="MainFontWidth" value="Condensed" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="fontconfig/skyrim_condensed.txt" destination="interface/fontconfig.txt" />
-          <file source="fontconfig/skyrim_condensed.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="font/fonts_skyrim-jp-every_every_condensed.swf" destination="interface/fonts_skyrim-jp-every_every_condensed.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="Skyrim" />
-          <flagDependency flag="MainFontWidth" value="Skinny" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="fontconfig/skyrim_skinny.txt" destination="interface/fontconfig.txt" />
-          <file source="fontconfig/skyrim_skinny.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="font/fonts_skyrim-jp-every_every_skinny.swf" destination="interface/fonts_skyrim-jp-every_every_skinny.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="LoreFriendly" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="font/fonts_lore-friendly-every_book.swf" destination="interface/fonts_lore-friendly-every_book.swf" />
-          <file source="font/fonts_lore-friendly-handwrite_handwrite.swf" destination="interface/fonts_lore-friendly-handwrite_handwrite.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="LoreFriendly" />
-          <flagDependency flag="MainFontWidth" value="Normal" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="fontconfig/lorefriendly_normal.txt" destination="interface/fontconfig.txt" />
-          <file source="fontconfig/lorefriendly_normal.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="font/fonts_lore-friendly-every_every.swf" destination="interface/fonts_lore-friendly-every_every.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="LoreFriendly" />
-          <flagDependency flag="MainFontWidth" value="Condensed" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="fontconfig/lorefriendly_condensed.txt" destination="interface/fontconfig.txt" />
-          <file source="fontconfig/lorefriendly_condensed.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="font/fonts_lore-friendly-every_every_condensed.swf" destination="interface/fonts_lore-friendly-every_every_condensed.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="LoreFriendly" />
-          <flagDependency flag="MainFontWidth" value="Skinny" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="fontconfig/lorefriendly_skinny.txt" destination="interface/fontconfig.txt" />
-          <file source="fontconfig/lorefriendly_skinny.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="font/fonts_lore-friendly-every_every_skinny.swf" destination="interface/fonts_lore-friendly-every_every_skinny.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="Cinecaption" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="font/fonts_skyrim-jp-book_book.swf" destination="interface/fonts_skyrim-jp-book_book.swf" />
-          <file source="font/fonts_skyrim-jp-handwrite_handwrite.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="Cinecaption" />
-          <flagDependency flag="MainFontWidth" value="Normal" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="fontconfig/cinecaption_normal.txt" destination="interface/fontconfig.txt" />
-          <file source="fontconfig/cinecaption_normal.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="font/fonts_cinecaption_every.swf" destination="interface/fonts_cinecaption_every.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="Cinecaption" />
-          <flagDependency flag="MainFontWidth" value="Condensed" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="fontconfig/cinecaption_condensed.txt" destination="interface/fontconfig.txt" />
-          <file source="fontconfig/cinecaption_condensed.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="font/fonts_cinecaption_every_condensed.swf" destination="interface/fonts_cinecaption_every_condensed.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="Cinecaption" />
-          <flagDependency flag="MainFontWidth" value="Skinny" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="fontconfig/cinecaption_skinny.txt" destination="interface/fontconfig.txt" />
-          <file source="fontconfig/cinecaption_skinny.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="font/fonts_cinecaption_every_skinny.swf" destination="interface/fonts_cinecaption_every_skinny.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="Modern" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="font/fonts_skyrim-jp-book_book.swf" destination="interface/fonts_skyrim-jp-book_book.swf" />
-          <file source="font/fonts_skyrim-jp-handwrite_handwrite.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="Modern" />
-          <flagDependency flag="MainFontWidth" value="Normal" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="fontconfig/modern_normal.txt" destination="interface/fontconfig.txt" />
-          <file source="fontconfig/modern_normal.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="font/fonts_mplus_every.swf" destination="interface/fonts_mplus_every.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="Modern" />
-          <flagDependency flag="MainFontWidth" value="Condensed" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="fontconfig/modern_condensed.txt" destination="interface/fontconfig.txt" />
-          <file source="fontconfig/modern_condensed.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="font/fonts_mplus_every_condensed.swf" destination="interface/fonts_mplus_every_condensed.swf" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="Preset" value="Modern" />
-          <flagDependency flag="MainFontWidth" value="Skinny" />
-          <flagDependency flag="Subset" value="Normal" />
-        </dependencies>
-        <files>
-          <file source="fontconfig/modern_skinny.txt" destination="interface/fontconfig.txt" />
-          <file source="fontconfig/modern_skinny.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="font/fonts_mplus_every_skinny.swf" destination="interface/fonts_mplus_every_skinny.swf" />
-        </files>
-      </pattern>
+      <!-- カワイイプリセット（軽量版・共通） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Kawaii" />
@@ -539,6 +381,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_apricot_handwrite_lightweight.swf" destination="interface/fonts_apricot_handwrite_lightweight.swf" />
         </files>
       </pattern>
+      <!-- カワイイプリセット（軽量版・通常幅） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Kawaii" />
@@ -551,6 +394,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_nyashi-kai2_every_lightweight.swf" destination="interface/fonts_nyashi-kai2_every_lightweight.swf" />
         </files>
       </pattern>
+      <!-- カワイイプリセット（軽量版・コンデンス） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Kawaii" />
@@ -563,6 +407,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_nyashi-kai2_every_condensed_lightweight.swf" destination="interface/fonts_nyashi-kai2_every_condensed_lightweight.swf" />
         </files>
       </pattern>
+      <!-- カワイイプリセット（軽量版・スキニー） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Kawaii" />
@@ -575,6 +420,57 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_nyashi-kai2_every_skinny_lightweight.swf" destination="interface/fonts_nyashi-kai2_every_skinny_lightweight.swf" />
         </files>
       </pattern>
+      <!-- スカイリムプリセット（通常版・共通） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Skyrim" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="font/fonts_skyrim-jp-book_book.swf" destination="interface/fonts_skyrim-jp-book_book.swf" />
+          <file source="font/fonts_skyrim-jp-handwrite_handwrite.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite.swf" />
+        </files>
+      </pattern>
+      <!-- スカイリムプリセット（通常版・通常幅） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Skyrim" />
+          <flagDependency flag="MainFontWidth" value="Normal" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/skyrim_normal.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/skyrim_normal.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_skyrim-jp-every_every.swf" destination="interface/fonts_skyrim-jp-every_every.swf" />
+        </files>
+      </pattern>
+      <!-- スカイリムプリセット（通常版・コンデンス） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Skyrim" />
+          <flagDependency flag="MainFontWidth" value="Condensed" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/skyrim_condensed.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/skyrim_condensed.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_skyrim-jp-every_every_condensed.swf" destination="interface/fonts_skyrim-jp-every_every_condensed.swf" />
+        </files>
+      </pattern>
+      <!-- スカイリムプリセット（通常版・スキニー） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Skyrim" />
+          <flagDependency flag="MainFontWidth" value="Skinny" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/skyrim_skinny.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/skyrim_skinny.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_skyrim-jp-every_every_skinny.swf" destination="interface/fonts_skyrim-jp-every_every_skinny.swf" />
+        </files>
+      </pattern>
+      <!-- スカイリムプリセット（軽量版・共通） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Skyrim" />
@@ -585,6 +481,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_skyrim-jp-handwrite_handwrite_lightweight.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite_lightweight.swf" />
         </files>
       </pattern>
+      <!-- スカイリムプリセット（軽量版・通常幅） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Skyrim" />
@@ -597,6 +494,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_skyrim-jp-every_every_lightweight.swf" destination="interface/fonts_skyrim-jp-every_every_lightweight.swf" />
         </files>
       </pattern>
+      <!-- スカイリムプリセット（軽量版・コンデンス） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Skyrim" />
@@ -609,6 +507,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_skyrim-jp-every_every_condensed_lightweight.swf" destination="interface/fonts_skyrim-jp-every_every_condensed_lightweight.swf" />
         </files>
       </pattern>
+      <!-- スカイリムプリセット（軽量版・スキニー） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Skyrim" />
@@ -621,6 +520,157 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_skyrim-jp-every_every_skinny_lightweight.swf" destination="interface/fonts_skyrim-jp-every_every_skinny_lightweight.swf" />
         </files>
       </pattern>
+      <!-- スムーズスカイリムプリセット（通常版・共通） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="SmoothSkyrim" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="font/fonts_skyrim-jp-book_book.swf" destination="interface/fonts_skyrim-jp-book_book.swf" />
+          <file source="font/fonts_skyrim-jp-handwrite_handwrite.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite.swf" />
+        </files>
+      </pattern>
+      <!-- スムーズスカイリムプリセット（通常版・通常幅） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="SmoothSkyrim" />
+          <flagDependency flag="MainFontWidth" value="Normal" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/smoothskyrim_normal.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/smoothskyrim_normal.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_futura-condensed-noto-sans_every.swf" destination="interface/fonts_futura-condensed-noto-sans_every.swf" />
+        </files>
+      </pattern>
+      <!-- スムーズスカイリムプリセット（通常版・コンデンス） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="SmoothSkyrim" />
+          <flagDependency flag="MainFontWidth" value="Condensed" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/smoothskyrim_condensed.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/smoothskyrim_condensed.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_futura-condensed-noto-sans_every_condensed.swf" destination="interface/fonts_futura-condensed-noto-sans_every_condensed.swf" />
+        </files>
+      </pattern>
+      <!-- スムーズスカイリムプリセット（通常版・スキニー） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="SmoothSkyrim" />
+          <flagDependency flag="MainFontWidth" value="Skinny" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/smoothskyrim_skinny.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/smoothskyrim_skinny.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_futura-condensed-noto-sans_every_skinny.swf" destination="interface/fonts_futura-condensed-noto-sans_every_skinny.swf" />
+        </files>
+      </pattern>
+      <!-- スムーズスカイリムプリセット（軽量版・共通） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="SmoothSkyrim" />
+          <flagDependency flag="Subset" value="Lightweight" />
+        </dependencies>
+        <files>
+          <file source="font/fonts_skyrim-jp-book_book_lightweight.swf" destination="interface/fonts_skyrim-jp-book_book_lightweight.swf" />
+          <file source="font/fonts_skyrim-jp-handwrite_handwrite_lightweight.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite_lightweight.swf" />
+        </files>
+      </pattern>
+      <!-- スムーズスカイリムプリセット（軽量版・通常幅） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="SmoothSkyrim" />
+          <flagDependency flag="MainFontWidth" value="Normal" />
+          <flagDependency flag="Subset" value="Lightweight" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/smoothskyrim_normal_lightweight.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/smoothskyrim_normal_lightweight.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_futura-condensed-noto-sans_every_lightweight.swf" destination="interface/fonts_futura-condensed-noto-sans_every_lightweight.swf" />
+        </files>
+      </pattern>
+      <!-- スムーズスカイリムプリセット（軽量版・コンデンス） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="SmoothSkyrim" />
+          <flagDependency flag="MainFontWidth" value="Condensed" />
+          <flagDependency flag="Subset" value="Lightweight" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/smoothskyrim_condensed_lightweight.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/smoothskyrim_condensed_lightweight.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_futura-condensed-noto-sans_every_condensed_lightweight.swf" destination="interface/fonts_futura-condensed-noto-sans_every_condensed_lightweight.swf" />
+        </files>
+      </pattern>
+      <!-- スムーズスカイリムプリセット（軽量版・スキニー） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="SmoothSkyrim" />
+          <flagDependency flag="MainFontWidth" value="Skinny" />
+          <flagDependency flag="Subset" value="Lightweight" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/smoothskyrim_skinny_lightweight.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/smoothskyrim_skinny_lightweight.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_futura-condensed-noto-sans_every_skinny_lightweight.swf" destination="interface/fonts_futura-condensed-noto-sans_every_skinny_lightweight.swf" />
+        </files>
+      </pattern>
+      <!-- ロアフレンドリープリセット（通常版・共通） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="LoreFriendly" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="font/fonts_lore-friendly-every_book.swf" destination="interface/fonts_lore-friendly-every_book.swf" />
+          <file source="font/fonts_lore-friendly-handwrite_handwrite.swf" destination="interface/fonts_lore-friendly-handwrite_handwrite.swf" />
+        </files>
+      </pattern>
+      <!-- ロアフレンドリープリセット（通常版・通常幅） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="LoreFriendly" />
+          <flagDependency flag="MainFontWidth" value="Normal" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/lorefriendly_normal.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/lorefriendly_normal.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_lore-friendly-every_every.swf" destination="interface/fonts_lore-friendly-every_every.swf" />
+        </files>
+      </pattern>
+      <!-- ロアフレンドリープリセット（通常版・コンデンス） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="LoreFriendly" />
+          <flagDependency flag="MainFontWidth" value="Condensed" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/lorefriendly_condensed.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/lorefriendly_condensed.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_lore-friendly-every_every_condensed.swf" destination="interface/fonts_lore-friendly-every_every_condensed.swf" />
+        </files>
+      </pattern>
+      <!-- ロアフレンドリープリセット（通常版・スキニー） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="LoreFriendly" />
+          <flagDependency flag="MainFontWidth" value="Skinny" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/lorefriendly_skinny.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/lorefriendly_skinny.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_lore-friendly-every_every_skinny.swf" destination="interface/fonts_lore-friendly-every_every_skinny.swf" />
+        </files>
+      </pattern>
+      <!-- ロアフレンドリープリセット（軽量版・共通） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="LoreFriendly" />
@@ -631,6 +681,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_lore-friendly-handwrite_handwrite_lightweight.swf" destination="interface/fonts_lore-friendly-handwrite_handwrite_lightweight.swf" />
         </files>
       </pattern>
+      <!-- ロアフレンドリープリセット（軽量版・通常幅） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="LoreFriendly" />
@@ -643,6 +694,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_lore-friendly-every_every_lightweight.swf" destination="interface/fonts_lore-friendly-every_every_lightweight.swf" />
         </files>
       </pattern>
+      <!-- ロアフレンドリープリセット（軽量版・コンデンス） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="LoreFriendly" />
@@ -655,6 +707,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_lore-friendly-every_every_condensed_lightweight.swf" destination="interface/fonts_lore-friendly-every_every_condensed_lightweight.swf" />
         </files>
       </pattern>
+      <!-- ロアフレンドリープリセット（軽量版・スキニー） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="LoreFriendly" />
@@ -667,6 +720,57 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_lore-friendly-every_every_skinny_lightweight.swf" destination="interface/fonts_lore-friendly-every_every_skinny_lightweight.swf" />
         </files>
       </pattern>
+      <!-- しねきゃぷしょんプリセット（通常版・共通） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Cinecaption" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="font/fonts_skyrim-jp-book_book.swf" destination="interface/fonts_skyrim-jp-book_book.swf" />
+          <file source="font/fonts_skyrim-jp-handwrite_handwrite.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite.swf" />
+        </files>
+      </pattern>
+      <!-- しねきゃぷしょんプリセット（通常版・通常幅） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Cinecaption" />
+          <flagDependency flag="MainFontWidth" value="Normal" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/cinecaption_normal.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/cinecaption_normal.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_cinecaption_every.swf" destination="interface/fonts_cinecaption_every.swf" />
+        </files>
+      </pattern>
+      <!-- しねきゃぷしょんプリセット（通常版・コンデンス） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Cinecaption" />
+          <flagDependency flag="MainFontWidth" value="Condensed" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/cinecaption_condensed.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/cinecaption_condensed.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_cinecaption_every_condensed.swf" destination="interface/fonts_cinecaption_every_condensed.swf" />
+        </files>
+      </pattern>
+      <!-- しねきゃぷしょんプリセット（通常版・スキニー） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Cinecaption" />
+          <flagDependency flag="MainFontWidth" value="Skinny" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/cinecaption_skinny.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/cinecaption_skinny.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_cinecaption_every_skinny.swf" destination="interface/fonts_cinecaption_every_skinny.swf" />
+        </files>
+      </pattern>
+      <!-- しねきゃぷしょんプリセット（軽量版・共通） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Cinecaption" />
@@ -677,6 +781,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_skyrim-jp-handwrite_handwrite_lightweight.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite_lightweight.swf" />
         </files>
       </pattern>
+      <!-- しねきゃぷしょんプリセット（軽量版・通常幅） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Cinecaption" />
@@ -689,6 +794,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_cinecaption_every_lightweight.swf" destination="interface/fonts_cinecaption_every_lightweight.swf" />
         </files>
       </pattern>
+      <!-- しねきゃぷしょんプリセット（軽量版・コンデンス） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Cinecaption" />
@@ -701,6 +807,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_cinecaption_every_condensed_lightweight.swf" destination="interface/fonts_cinecaption_every_condensed_lightweight.swf" />
         </files>
       </pattern>
+      <!-- しねきゃぷしょんプリセット（軽量版・スキニー） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Cinecaption" />
@@ -713,6 +820,57 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_cinecaption_every_skinny_lightweight.swf" destination="interface/fonts_cinecaption_every_skinny_lightweight.swf" />
         </files>
       </pattern>
+      <!-- モダンプリセット（通常版・共通） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Modern" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="font/fonts_skyrim-jp-book_book.swf" destination="interface/fonts_skyrim-jp-book_book.swf" />
+          <file source="font/fonts_skyrim-jp-handwrite_handwrite.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite.swf" />
+        </files>
+      </pattern>
+      <!-- モダンプリセット（通常版・通常幅） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Modern" />
+          <flagDependency flag="MainFontWidth" value="Normal" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/modern_normal.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/modern_normal.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_mplus_every.swf" destination="interface/fonts_mplus_every.swf" />
+        </files>
+      </pattern>
+      <!-- モダンプリセット（通常版・コンデンス） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Modern" />
+          <flagDependency flag="MainFontWidth" value="Condensed" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/modern_condensed.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/modern_condensed.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_mplus_every_condensed.swf" destination="interface/fonts_mplus_every_condensed.swf" />
+        </files>
+      </pattern>
+      <!-- モダンプリセット（通常版・スキニー） -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Modern" />
+          <flagDependency flag="MainFontWidth" value="Skinny" />
+          <flagDependency flag="Subset" value="Normal" />
+        </dependencies>
+        <files>
+          <file source="fontconfig/modern_skinny.txt" destination="interface/fontconfig.txt" />
+          <file source="fontconfig/modern_skinny.txt" destination="interface/fontconfig_ja.txt" />
+          <file source="font/fonts_mplus_every_skinny.swf" destination="interface/fonts_mplus_every_skinny.swf" />
+        </files>
+      </pattern>
+      <!-- モダンプリセット（軽量版・共通） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Modern" />
@@ -723,6 +881,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_skyrim-jp-handwrite_handwrite_lightweight.swf" destination="interface/fonts_skyrim-jp-handwrite_handwrite_lightweight.swf" />
         </files>
       </pattern>
+      <!-- モダンプリセット（軽量版・通常幅） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Modern" />
@@ -735,6 +894,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_mplus_every_lightweight.swf" destination="interface/fonts_mplus_every_lightweight.swf" />
         </files>
       </pattern>
+      <!-- モダンプリセット（軽量版・コンデンス） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Modern" />
@@ -747,6 +907,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_mplus_every_condensed_lightweight.swf" destination="interface/fonts_mplus_every_condensed_lightweight.swf" />
         </files>
       </pattern>
+      <!-- モダンプリセット（軽量版・スキニー） -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="Preset" value="Modern" />
@@ -759,6 +920,7 @@ map "$MCMBoldFont" = "フォント名" Normal</description>
           <file source="font/fonts_mplus_every_skinny_lightweight.swf" destination="interface/fonts_mplus_every_skinny_lightweight.swf" />
         </files>
       </pattern>
+      <!-- SkyUI MCMフォントマップ -->
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="GameVersion" value="SkyrimSE" />
