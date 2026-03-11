@@ -3,8 +3,8 @@ setlocal
 cd /d %~dp0
 
 set VERSION=2.4.0
-set APP_NAME=Japanese-Font-Library
-set BUILD_DIR=build
+set APP_NAME=JapaneseFontLibrary
+set BUILD_DIR=dist
 
 :: --- 設定エリア ---
 :: 出力ファイル名
@@ -12,14 +12,14 @@ set OUT_NAME=%BUILD_DIR%\%APP_NAME%_v%VERSION%.7z
 
 :: 圧縮したいフォルダやファイルをスペース区切りで指定
 :: (例: assetsフォルダ, dataフォルダ, LICENSEファイル, README.md)
-set TARGETS="bugfix" "docs" "fomod" "font" "fontconfig" "option" "LICENSE" "README.md" "readme.txt"
+set TARGETS="assets" "data" "docs" "fomod" "LICENSE" "README.md" "readme.txt"
 
 :: 除外したいファイル（もしあれば）
 :: 例: *.pdb (デバッグファイル) や thumbs.db など
 :: set EXCLUDE=-x!*.pdb -x!thumbs.db
 :: -----------------
 
-echo [インストーラーのビルドを開始します]
+echo [配布用のFomodインストーラーのビルドを開始します]
 echo 出力先: %OUT_NAME%
 
 :: 7za.exe を実行
