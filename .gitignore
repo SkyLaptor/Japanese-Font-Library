@@ -252,9 +252,12 @@ working/
 #data/ffdec/
 
 # Data
-!data/
-!assets/
-!tests/data/
+!data/*.*
+!data/**/*.*
+!assets/*.*
+!assets/**/*.*
+!tests/data/*.*
+!tests/data/**/*.*
 
 # Symlink files
 dist
