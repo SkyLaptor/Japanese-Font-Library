@@ -1,0 +1,32 @@
+{
+  "recommendations": [
+    // 日本語化
+    "ms-ceintl.vscode-language-pack-ja",
+
+    // GitHub連携
+    "github.vscode-pull-request-github",
+    "github.vscode-github-actions",
+
+    // Python開発
+    "ms-python.black-formatter",
+    "charliermarsh.ruff",
+
+    // ドキュメント作成
+    "yzhang.markdown-all-in-one",
+    "shd101wyy.markdown-preview-enhanced",
+
+    // ミス防止・視認性向上
+    "streetsidesoftware.code-spell-checker",
+    "oderwat.indent-rainbow",
+    //"sirtori.indenticator",
+    "wayou.vscode-todo-highlight",
+    "mosapride.zenkaku",
+    "mechatroner.rainbow-csv",
+
+    // お好みで
+    //"github.github-vscode-theme",
+    //"alefragnani.project-manager",
+    //"pkief.material-icon-theme",
+    //"tonybaloney.vscode-pets"
+  ]
+}
