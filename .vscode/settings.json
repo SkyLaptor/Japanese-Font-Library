@@ -1,8 +1,66 @@
 {
+    "python-envs.terminal.autoActivationType": "off",
+    "python.terminal.activateEnvironment": false,
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "window.restoreWindows": "none",
+    // Black Formatter の「お節介（クォートの自動変換）」を止める
+    "black-formatter.args": [
+        "--skip-string-normalization"
+    ],
+    // PythonのデフォルトフォーマッタをBlackに設定
+    "[python]": {
+        // Pythonファイルを保存する際、デフォルトのフォーマッタを Black に指定
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.codeActionsOnSave": {
+            // 保存時にRuffでインポート順の整理と自動修正を実行
+            "source.fixAll.ruff": "always",
+            "source.organizeImports.ruff": "always"
+        }
+    },
+    
+    "cSpell.words": [
+        "cmap",
+        "familyname",
+        "fontforge",
+        "fontinfo",
+        "fontname",
+        "fstypepermitted",
+        "glyf",
+        "gmtime",
+        "hhea",
+        "hmtx",
+        "nbspace",
+        "nonexisted",
+        "notdef",
+        "pathops",
+        "pytest",
+        "recalc",
+        "reconstructor",
+        "rtype",
+        "sfnt",
+        "skia",
+        "skyrim",
+        "Subsetter",
+        "Typog",
+        "unicodes",
+        "winkern"
+    ],
     "files.associations": {
         "*.cmd": "bat"
     },
     "[bat]": {
         "files.encoding": "shiftjis"
-    }
+    },
+    "python-envs.pythonProjects": [
+        {
+            "path": ".",
+            "envManager": "ms-python.python:venv",
+            "packageManager": "ms-python.python:pip"
+        }
+    ],
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
