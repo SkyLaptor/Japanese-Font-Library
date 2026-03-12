@@ -333,6 +333,7 @@ map "$MCMBoldFont" = "フォント名" Normal
         </dependencies>
         <files>
           <file source="data/fontswfs/fonts_kawaii_preset.swf" destination="interface/fonts_kawaii_preset.swf" />
+          <file source="assets/images/preset_kawaii.jpg" destination="interface/fonts_kawaii_preset.jpg" />
         </files>
       </pattern>
       <!-- 軽量サブセット -->
@@ -344,6 +345,7 @@ map "$MCMBoldFont" = "フォント名" Normal
         <files>
           <!-- 通常サブセットと同名でswfを配置することで、fontconfig.txtの数を削減（swf内の名前は通常版/サブセット版で同一にしておくこと。） -->
           <file source="data/fontswfs/fonts_kawaii_preset_lw.swf" destination="interface/fonts_kawaii_preset.swf" />
+          <file source="assets/images/preset_kawaii.jpg" destination="interface/fonts_kawaii_preset.jpg" />
         </files>
       </pattern>
       <!-- 100%幅 -->
@@ -390,6 +392,7 @@ map "$MCMBoldFont" = "フォント名" Normal
         </dependencies>
         <files>
           <file source="data/fontswfs/fonts_skyrim_preset.swf" destination="interface/fonts_skyrim_preset.swf" />
+          <file source="assets/images/preset_skyrim.jpg" destination="interface/fonts_skyrim_preset.jpg" />
         </files>
       </pattern>
       <!-- 軽量サブセット -->
@@ -400,6 +403,7 @@ map "$MCMBoldFont" = "フォント名" Normal
         </dependencies>
         <files>
           <file source="data/fontswfs/fonts_skyrim_preset_lw.swf" destination="interface/fonts_skyrim_preset.swf" />
+          <file source="assets/images/preset_skyrim.jpg" destination="interface/fonts_skyrim_preset.jpg" />
         </files>
       </pattern>
       <!-- 100%幅 -->
@@ -445,6 +449,7 @@ map "$MCMBoldFont" = "フォント名" Normal
         </dependencies>
         <files>
           <file source="data/fontswfs/fonts_smoothskyrim_preset.swf" destination="interface/fonts_smoothskyrim_preset.swf" />
+          <file source="assets/images/preset_smoothskyrim.jpg" destination="interface/fonts_smoothskyrim_preset.jpg" />
         </files>
       </pattern>
       <!-- 軽量サブセット -->
@@ -455,6 +460,7 @@ map "$MCMBoldFont" = "フォント名" Normal
         </dependencies>
         <files>
           <file source="data/fontswfs/fonts_smoothskyrim_preset_lw.swf" destination="interface/fonts_smoothskyrim_preset.swf" />
+          <file source="assets/images/preset_smoothskyrim.jpg" destination="interface/fonts_smoothskyrim_preset.jpg" />
         </files>
       </pattern>
       <!-- 100%幅 -->
@@ -500,6 +506,7 @@ map "$MCMBoldFont" = "フォント名" Normal
         </dependencies>
         <files>
           <file source="data/fontswfs/fonts_lorefriendly_preset.swf" destination="interface/fonts_lorefriendly_preset.swf" />
+          <file source="assets/images/preset_lorefriendly.jpg" destination="interface/fonts_lorefriendly_preset.jpg" />
         </files>
       </pattern>
       <!-- 軽量サブセット -->
@@ -510,6 +517,7 @@ map "$MCMBoldFont" = "フォント名" Normal
         </dependencies>
         <files>
           <file source="data/fontswfs/fonts_lorefriendly_preset_lw.swf" destination="interface/fonts_lorefriendly_preset.swf" />
+          <file source="assets/images/preset_lorefriendly.jpg" destination="interface/fonts_lorefriendly_preset.jpg" />
         </files>
       </pattern>
       <!-- 100%幅 -->
@@ -555,6 +563,7 @@ map "$MCMBoldFont" = "フォント名" Normal
         </dependencies>
         <files>
           <file source="data/fontswfs/fonts_cinecaption_preset.swf" destination="interface/fonts_cinecaption_preset.swf" />
+          <file source="assets/images/preset_cinecaption.jpg" destination="interface/fonts_cinecaption_preset.jpg" />
         </files>
       </pattern>
       <!-- 軽量サブセット -->
@@ -565,6 +574,7 @@ map "$MCMBoldFont" = "フォント名" Normal
         </dependencies>
         <files>
           <file source="data/fontswfs/fonts_cinecaption_preset_lw.swf" destination="interface/fonts_cinecaption_preset.swf" />
+          <file source="assets/images/preset_cinecaption.jpg" destination="interface/fonts_cinecaption_preset.jpg" />
         </files>
       </pattern>
       <!-- 100%幅 -->
@@ -610,6 +620,7 @@ map "$MCMBoldFont" = "フォント名" Normal
         </dependencies>
         <files>
           <file source="data/fontswfs/fonts_modern_preset.swf" destination="interface/fonts_modern_preset.swf" />
+          <file source="assets/images/preset_modern.jpg" destination="interface/fonts_modern_preset.jpg" />
         </files>
       </pattern>
       <!-- 軽量サブセット -->
@@ -620,6 +631,7 @@ map "$MCMBoldFont" = "フォント名" Normal
         </dependencies>
         <files>
           <file source="data/fontswfs/fonts_modern_preset_lw.swf" destination="interface/fonts_modern_preset.swf" />
+          <file source="assets/images/preset_modern.jpg" destination="interface/fonts_modern_preset.jpg" />
         </files>
       </pattern>
       <!-- 100%幅 -->
