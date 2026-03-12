@@ -2,7 +2,7 @@
 setlocal
 cd /d %~dp0
 
-set VERSION=2.4.0
+set VERSION=2.4.1
 set APP_NAME=JapaneseFontLibrary
 set BUILD_DIR=dist
 
