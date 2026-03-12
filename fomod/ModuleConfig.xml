@@ -4,8 +4,6 @@
   <!-- 必ず配置するファイル -->
   <requiredInstallFiles>
     <file source="data/fontswfs/fonts_core.swf" destination="interface/fonts_core.swf" />
-    <file source="data/fontconfigs/template.txt" destination="interface/fontconfig_template.txt" />
-    <file source="data/fontconfigs/template.txt" destination="interface/fontconfig_ja_template.txt" />
   </requiredInstallFiles>
 
   <installSteps order="Explicit">
@@ -186,10 +184,9 @@
 
         <!-- 全般・UIフォント幅選択 -->
         <group name="プリセットの全般・UIフォント幅" type="SelectExactlyOne">
-          <description>インベントリや字幕に使用されるフォントの幅を指定します。</description>
           <plugins order="Explicit">
             <plugin name="100%幅">
-              <description>通常のフォント幅です。</description>
+              <description>インベントリや字幕に使用されるフォントの幅を通常の幅に指定します。</description>
               <image path="assets/images/sample_w100.png" />
               <files />
               <conditionFlags>
@@ -535,7 +532,6 @@ map "$MCMBoldFont" = "フォント名" Normal
         <files>
           <file source="data/fontconfigs/lorefriendly_w70.txt" destination="interface/fontconfig.txt" />
           <file source="data/fontconfigs/lorefriendly_w70.txt" destination="interface/fontconfig_ja.txt" />
-          <file source="data/fontswfs/fonts_lore-friendly-every_every_condensed.swf" destination="interface/fonts_lore-friendly-every_every_condensed.swf" />
         </files>
       </pattern>
       <!-- 50%幅 -->
@@ -657,6 +653,16 @@ map "$MCMBoldFont" = "フォント名" Normal
         <files>
           <file source="data/fontconfigs/modern_w50.txt" destination="interface/fontconfig.txt" />
           <file source="data/fontconfigs/modern_w50.txt" destination="interface/fontconfig_ja.txt" />
+        </files>
+      </pattern>
+
+      <!-- フォントカスタム -->
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="Preset" value="Custom" />
+        </dependencies>
+        <files>
+          <file source="data/fontconfigs/template.txt" destination="interface/fontconfig_template.txt" />
         </files>
       </pattern>
 
