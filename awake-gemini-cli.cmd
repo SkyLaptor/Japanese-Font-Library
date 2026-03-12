@@ -1,0 +1,1 @@
+gemini "Please read $(Get-Content .gemini-context -Raw) and waiting for the next instruction."
