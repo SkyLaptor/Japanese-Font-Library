@@ -250,6 +250,9 @@
             </plugin>
           </plugins>
         </group>
+      </optionalFileGroups>
+    </installStep>
+  </installSteps>
 
   <!-- フラグによるファイル配置分岐 -->
   <conditionalFileInstalls>
@@ -651,4 +654,5 @@
 
     </patterns>
   </conditionalFileInstalls>
+
 </config>
