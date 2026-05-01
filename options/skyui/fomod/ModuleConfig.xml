@@ -20,7 +20,7 @@ map "$MCMFont" = "フォント名" Normal
 map "$MCMMediumFont" = "フォント名" Normal
 map "$MCMBoldFont" = "フォント名" Normal</description>
               <files>
-                <folder source="data/patches/skyui-mcmsf/skyui5.1" destination="" priority="0" />
+                <folder source="data/skyui-mcmsf/skyui5.1" destination="" priority="0" />
               </files>
               <typeDescriptor>
                   <dependencyType>
@@ -47,7 +47,7 @@ map "$MCMFont" = "フォント名" Normal
 map "$MCMMediumFont" = "フォント名" Normal
 map "$MCMBoldFont" = "フォント名" Normal</description>
               <files>
-                <folder source="data/patches/skyui-mcmsf/skyui5.2se" destination="" priority="0" />
+                <folder source="data/skyui-mcmsf/skyui5.2se" destination="" priority="0" />
               </files>
               <typeDescriptor>
                   <dependencyType>
@@ -74,7 +74,7 @@ map "$MCMFont" = "フォント名" Normal
 map "$MCMMediumFont" = "フォント名" Normal
 map "$MCMBoldFont" = "フォント名" Normal</description>
               <files>
-                <folder source="data/patches/skyui-mcmsf/skyui6.9se" destination="" priority="0" />
+                <folder source="data/skyui-mcmsf/skyui6.9se" destination="" priority="0" />
               </files>
               <typeDescriptor>
                   <dependencyType>

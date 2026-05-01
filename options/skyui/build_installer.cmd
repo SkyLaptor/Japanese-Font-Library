@@ -2,7 +2,7 @@
 setlocal
 cd /d %~dp0
 
-:: 対応する本体バージョン.pXX
+:: 対応する本体バージョン
 set VERSION=2.4.2
 set APP_NAME=JapaneseFontLibraryOptions_SkyUI
 set BUILD_DIR=dist
@@ -13,7 +13,7 @@ set OUT_NAME=%BUILD_DIR%\%APP_NAME%_v%VERSION%.7z
 
 :: 圧縮したいフォルダやファイルをスペース区切りで指定
 :: (例: assetsフォルダ, dataフォルダ, LICENSEファイル, README.md)
-set TARGETS="assets" "data" "docs" "fomod" "LICENSE" "README.md" "readme.txt"
+set TARGETS="assets" "data" "docs" "fomod"
 
 :: 除外したいファイル（もしあれば）
 :: 例: *.pdb (デバッグファイル) や thumbs.db など
@@ -28,7 +28,7 @@ echo 出力先: %OUT_NAME%
 :: -t7z: 7z形式
 :: -mx9: 最高圧縮レベル (1-9)
 :: -y  : 上書き確認をすべて「はい」にする
-7za.exe a "%OUT_NAME%" %TARGETS% -t7z -mx9 -y %EXCLUDE%
+..\..\7za.exe a "%OUT_NAME%" %TARGETS% -t7z -mx9 -y %EXCLUDE%
 
 if %ERRORLEVEL% equ 0 (
     echo.
