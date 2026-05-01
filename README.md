@@ -1,8 +1,9 @@
 # Japanese Font Library
+
 全バージョンのスカイリム（無印/LE/SE/AE/VR）に対応した、日本語圏プレイヤー向けの決定版フォントリプレーサーです。
 
-
 ## 特徴
+
 * **かんたん導入** : FOMODインストーラー対応。初心者から上級者まで、クリックのみで設定完了。
 * **「豆腐」問題を解消**: 日本語環境で必要な文字をほぼ網羅（※通常サブセット版）。
 * **選べる動作環境**: 安定性・軽さを重視したい方向けに、バニラ準拠の文字種に絞った「軽量サブセット版」も用意。
@@ -11,65 +12,22 @@
 * **バグ修正も同梱**: ゲーム本体が抱えるフォント・UI周りのバグを修正するパッチを選択可能です。
 
 ## 事前準備
-### MODマネージャー([Vortex](https://www.nexusmods.com/about/vortex) または [ModOrganizer2](https://github.com/ModOrganizer2/modorganizer))
+
+### MODマネージャー
+
 公式の手順に従い、あらかじめインストールを済ませておいてください。
-
-
+[Vortex](https://www.nexusmods.com/about/vortex) または [ModOrganizer2](https://github.com/ModOrganizer2/modorganizer)
 
 ## インストール手順
 
 ### 1. ダウンロード
+
 [Nexus Mods](https://www.nexusmods.com/skyrimspecialedition/mods/12589) から最新のインストーラーをダウンロードしてください。
 
 ### 2. MODマネージャーへの導入
+
 ダウンロードしたファイルを Vortex または ModOrganizer2 に投入してください。起動したウィザードに従い、好みのプリセットやオプションを選択します。
 
 ### 3. 動作確認
+
 インストール完了後、ゲームを起動してフォントが正しく反映されているか確認してください。
-
-
-## 高度なカスタマイズ（手動設定）
-プリセット以外の組み合わせを楽しみたい方向けの手順です。
-
-### 1. 準備
-インストーラーで **「フォントカスタムモード」** を選択して導入します。
-
-別途、好みのフォントSWFファイルを [Nexus Mods](https://www.nexusmods.com/skyrimspecialedition/mods/12589) の `Miscellaneous files` からダウンロードして `Skyrim\Data\Interface` 内に配置してください。  
-フォントSWFファイルを自作したい場合は、サブプロジェクトの [Japanese Font Library - Fonts](https://github.com/SkyLaptor/Japanese-Font-Library-Fonts) で作成に便利なツールを公開しています。
-
-### 2. fontconfig.txt の編集
-`Skyrim\Data\Interface` 内の設定ファイルを開き、以下の2箇所を編集します。
-
-1. **フォントの読み込み設定**  
-ファイル上部に、使用したいSWFファイルを追記します。  
-`fontlib "Interface\フォントファイル名.swf"`
-
-2. **フォントの割り当て設定**  
-ファイル中段の `map` 行を書き換えます。**※左側のマップ名は変更しないでください。**  
-
-|適用場所|書き換えるマップ名（一例）|
-|:---|:---|
-|**UI全般** (メニュー/字幕/アイテム名)|`$StartMenuFont`, `$DialogueFont`, `$EverywhereFont` 等|
-|**書籍** (本の内容)|`$SkyrimBooks`|
-|**手紙・メモ** (手書き風)|`$HandwrittenFont`, `$HandwrittenBold`|
-
-> [!IMPORTANT]
-> 設定をミスすると、すべての文字が「豆腐（□）」になります。記述に間違いがないか最後に必ず確認してください。
-
-
-### フォントファイルの命名規則について
-本MODのフォントファイル（SWF）および内部のフォント名は、管理しやすいよう以下の規則で命名されています。
-
-#### 命名フォーマット
-* **フォントファイル名**: `fonts_<ファミリー>_<太さ>_<ベースUI>_<長体(幅)>_<サブセット>.swf`
-* **内部フォント名**: `<ファミリー>_<太さ>_<ベースUI>_<長体(幅)>_<サブセット>`
-
-#### 各項目の詳細
-
-|項目|内容|備考|
-|:----|:----|:----|
-|**ファミリー**|`noto-sans`, `sourcehanserif` 等|フォントの種類です|
-|**太さ**|`_light` (細字) / `_bold` (太字) 等|相対的な太さを表します。中間を表す `medium` は省略されます。|
-|**ベースUI**|`_every` (汎用) / `_book` (書籍) / `_handwrite` (手紙)|各UIに最適化されたサイズ設定を表します。|
-|**長体(幅)**|`_condensed` (60-70%) / `_skinny` (40-50%)|UIからはみ出すのを防ぎます。通常幅である `normal` は省略されます。|
-|**サブセット**|`_lightweight` (軽量版)|バニラ文字種のみに制限し、CTDを抑制します。制限のない `full` は省略されます。|
