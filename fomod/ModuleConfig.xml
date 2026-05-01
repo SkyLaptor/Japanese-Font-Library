@@ -251,35 +251,6 @@
           </plugins>
         </group>
 
-        <!-- その他 -->
-        <group name="その他オプション" type="SelectAny">
-          <plugins order="Explicit">
-
-            <!-- MCM用フォントマップ -->
-            <plugin name="SkyUI用MCM専用フォントマップ">
-              <description>SkyUIのMCM画面が使用するフォントマップを変更するパッチです。他のUI系MODと競合が発生した場合は無効化して下さい。
-
-MCMが使用するフォントマップを変更しますので、必ずfontconfig.txtに以下のフォントマップが適切に設定されていることを確認して下さい。
-map "$MCMFont" = "フォント名" Normal
-map "$MCMMediumFont" = "フォント名" Normal
-map "$MCMBoldFont" = "フォント名" Normal
-
-当インストーラーで設置されるfontconfig.txtには50%幅フォントが設定済みです。</description>
-              <image path="" />
-              <files />
-              <conditionFlags>
-                <flag name="Option-SkyUI-MCMSF">True</flag>
-              </conditionFlags>
-              <typeDescriptor>
-                <type name="Optional" />
-              </typeDescriptor>
-            </plugin>
-          </plugins>
-        </group>
-      </optionalFileGroups>
-    </installStep>
-  </installSteps>
-
   <!-- フラグによるファイル配置分岐 -->
   <conditionalFileInstalls>
     <patterns>
@@ -678,25 +649,6 @@ map "$MCMBoldFont" = "フォント名" Normal
         </files>
       </pattern>
 
-      <!-- SkyUI MCMフォントマップ -->
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="GameVersion" value="SkyrimSE" />
-          <flagDependency flag="Option-SkyUI-MCMSF" value="True" />
-        </dependencies>
-        <files>
-          <folder source="data/options/skyui-mcmsf/skyui5.2se-mcmspecialfontmap" destination="" />
-        </files>
-      </pattern>
-      <pattern>
-        <dependencies operator="And">
-          <flagDependency flag="GameVersion" value="Skyrim" />
-          <flagDependency flag="Option-SkyUI-MCMSF" value="True" />
-        </dependencies>
-        <files>
-          <folder source="data/options/skyui-mcmsf/skyui5.1-mcmspecialfontmap" destination="" />
-        </files>
-      </pattern>
     </patterns>
   </conditionalFileInstalls>
 </config>
