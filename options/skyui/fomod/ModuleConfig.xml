@@ -1,0 +1,100 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+  <moduleName>Japanese Font Library Option - SkyUI</moduleName>
+  <moduleImage path="assets/images/eyecatch/eyecatch.jpg" />
+
+  <installSteps order="Explicit">
+
+    <!-- 専用フォントマップ -->
+    <installStep name="SkyUI">
+      <optionalFileGroups order="Explicit">
+        <group name="SkyUI用MCM専用フォントマップオプション" type="SelectAtMostOne">
+          <plugins>
+
+            <plugin name="SkyUI v5.1用">
+              <description>SkyUIのMCM画面が使用するフォントマップを変更するパッチです。
+対象MOD: https://www.nexusmods.com/skyrim/mods/3863 v5.1
+例えば幅が狭いフォントをMCM画面だけに適用したい時など、通常のフォントと分けたい場合に使用してください。
+
+注意：MCMが使用するフォントマップを変更しますので、必ずfontconfig.txtに以下のフォントマップが適切に設定されていることを確認して下さい。
+map "$MCMFont" = "フォント名" Normal
+map "$MCMMediumFont" = "フォント名" Normal
+map "$MCMBoldFont" = "フォント名" Normal</description>
+              <files>
+                <folder source="data/patches/skyui-mcmsf/skyui5.1" destination="" priority="0" />
+              </files>
+              <typeDescriptor>
+                  <dependencyType>
+                    <defaultType name="Optional" />
+                    <patterns>
+                      <pattern>
+                        <dependencies operator="And">
+                          <fileDependency file="SkyUI.esp" state="Active" />
+                        </dependencies>
+                        <type name="Recommended" />
+                      </pattern>
+                    </patterns>
+                  </dependencyType>
+              </typeDescriptor>
+            </plugin>
+            
+            <plugin name="SkyUI-SE v5.2用">
+              <description>SkyUIのMCM画面が使用するフォントマップを変更するパッチです。
+対象MOD: https://www.nexusmods.com/skyrimspecialedition/mods/12604 v5.2
+例えば幅が狭いフォントをMCM画面だけに適用したい時など、通常のフォントと分けたい場合に使用してください。
+
+注意：MCMが使用するフォントマップを変更しますので、必ずfontconfig.txtに以下のフォントマップが適切に設定されていることを確認して下さい。
+map "$MCMFont" = "フォント名" Normal
+map "$MCMMediumFont" = "フォント名" Normal
+map "$MCMBoldFont" = "フォント名" Normal</description>
+              <files>
+                <folder source="data/patches/skyui-mcmsf/skyui5.2se" destination="" priority="0" />
+              </files>
+              <typeDescriptor>
+                  <dependencyType>
+                    <defaultType name="Optional" />
+                    <patterns>
+                      <pattern>
+                        <dependencies operator="And">
+                          <fileDependency file="SkyUI_SE.esp" state="Active" />
+                        </dependencies>
+                        <type name="Recommended" />
+                      </pattern>
+                    </patterns>
+                  </dependencyType>
+              </typeDescriptor>
+            </plugin>
+
+            <plugin name="SkyUI-SE v6.9用">
+              <description>SkyUIのMCM画面が使用するフォントマップを変更するパッチです。
+対象MOD: https://www.nexusmods.com/skyrimspecialedition/mods/12604 v6.9
+例えば幅が狭いフォントをMCM画面だけに適用したい時など、通常のフォントと分けたい場合に使用してください。
+
+注意：MCMが使用するフォントマップを変更しますので、必ずfontconfig.txtに以下のフォントマップが適切に設定されていることを確認して下さい。
+map "$MCMFont" = "フォント名" Normal
+map "$MCMMediumFont" = "フォント名" Normal
+map "$MCMBoldFont" = "フォント名" Normal</description>
+              <files>
+                <folder source="data/patches/skyui-mcmsf/skyui6.9se" destination="" priority="0" />
+              </files>
+              <typeDescriptor>
+                  <dependencyType>
+                    <defaultType name="Optional" />
+                    <patterns>
+                      <pattern>
+                        <dependencies operator="And">
+                          <fileDependency file="SkyUI_SE.esp" state="Active" />
+                        </dependencies>
+                        <type name="Recommended" />
+                      </pattern>
+                    </patterns>
+                  </dependencyType>
+              </typeDescriptor>
+            </plugin>
+
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+
+  </installSteps>
+</config>
