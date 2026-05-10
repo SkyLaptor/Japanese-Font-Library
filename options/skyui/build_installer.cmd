@@ -3,7 +3,7 @@ setlocal
 cd /d %~dp0
 
 :: 対応する本体バージョン
-set VERSION=2.4.2
+set VERSION=2.4.2.1
 set APP_NAME=JapaneseFontLibraryOptions_SkyUI
 set BUILD_DIR=dist
 
